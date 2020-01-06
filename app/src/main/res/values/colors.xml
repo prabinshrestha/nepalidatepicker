@@ -14,4 +14,33 @@
     <color name="calendar_false">#B2DFDB</color>
     <color name="dark_red">#FFAC3510</color>
 
+
+
+    <color name="white_text">#e0e0e0</color>
+    <!--<color name="background">#DBDBDB</color>-->
+    <color name="white">#FFFFFF</color>
+    <color name="gray_light">#D3D3D3</color>
+    <color name="gray_dark">#A9A9A9</color>
+    <color name="gray">#808080</color>
+
+    <color name="background">#FCE4EC</color>
+
+    <color name="red">#FFEE1C25</color>
+    <color name="blue">#FF303192</color>
+    <color name="yellow">#FFFFF100</color>
+    <color name="dark_blue">#FF272361</color>
+
+    <!--http://androidapplink.blogspot.com/2015/05/transparent-color-code-in-android.html-->
+    <color name="white_semi_transparent">#1AD3D3D3</color>
+    <color name="white_semi_transparent1">#4DFFFFFF</color>
+    <color name="green">#3CB371</color>
+
+
+    <color name="blue_half">#802F4779</color>
+
+    <color name="white_half">#80F6F6F7</color>
+    <color name="white_transparent">#BFF6F6F7</color>
+    <color name="bottom_nav_white_transparent">#E6F6F6F7</color>
+
+
 </resources>

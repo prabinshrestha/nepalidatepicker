@@ -1,9 +1,14 @@
 package com.galaxie.nepalicalendar.dateconverter.view
 
+import android.app.Dialog
+import android.graphics.Color
+import android.graphics.drawable.ColorDrawable
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.view.Window
+import android.widget.RelativeLayout
 import android.widget.Toast
 import androidx.fragment.app.DialogFragment
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -12,7 +17,6 @@ import com.galaxie.nepalicalendar.R
 import com.galaxie.nepalicalendar.dateconverter.CalendarMonthRow
 import kotlinx.android.synthetic.main.nepali_date_picker.*
 import timber.log.Timber
-
 
 
 class NepaliDatePicker : DialogFragment() {
@@ -30,6 +34,14 @@ class NepaliDatePicker : DialogFragment() {
     lateinit var nepaliDatePickerLogic: NepaliDatePickerLogic
     lateinit var dateRVAdapter: DateRVAdapter
     var dateListener: DateListener? = null
+
+
+    override fun onCreateDialog(savedInstanceState: Bundle?): Dialog {
+        val dialog = Dialog(context!!)
+        dialog.requestWindowFeature(Window.FEATURE_NO_TITLE)
+        dialog.window!!.setBackgroundDrawable(ColorDrawable(Color.WHITE))
+        return dialog
+    }
 
 
 

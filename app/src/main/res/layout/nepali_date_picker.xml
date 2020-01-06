@@ -7,7 +7,7 @@
         android:id="@+id/llNepaliDate"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@color/colorAccent"
+        android:background="@color/gray_light"
         android:paddingBottom="16dp"
         android:paddingTop="16dp">
 
@@ -17,7 +17,7 @@
             android:layout_height="wrap_content"
             android:paddingLeft="16dp"
             android:text=""
-            android:textColor="@android:color/white"
+            android:textColor="@color/colorPrimary"
             android:textSize="24sp"
             android:textStyle="bold" />
 
@@ -66,10 +66,10 @@
 
 
     <androidx.recyclerview.widget.RecyclerView
+        android:layout_centerHorizontal="true"
         android:id="@+id/rvDateTable"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="#B2DFDB"
         android:layout_below="@+id/rlNepaliDate"
         android:scrollbars="vertical" />
 
@@ -78,16 +78,17 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
+        android:layout_marginBottom="2dp"
+        android:background="@android:color/white"
         android:layout_below="@id/rvDateTable">
         <!--android:layout_alignParentBottom="true">-->
 
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/btnCancel"
-
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_toLeftOf="@+id/btnOk"
-            android:background="@android:color/white"
+            style="@style/Widget.AppCompat.Button.Borderless"
             android:text="Cancel"
             android:textColor="@color/colorAccent"
             android:textSize="16sp" />
@@ -97,8 +98,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentRight="true"
-            android:background="@android:color/white"
-            android:text="OK"
+            style="@style/Widget.AppCompat.Button.Borderless"
+            android:text="SET"
             android:textColor="@color/colorAccent"
             android:textSize="16sp" />
 
