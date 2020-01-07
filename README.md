@@ -2,7 +2,7 @@
 nepali calendar library for android
 
 
- fun initDate() {
+    fun initDate() {
 
         this.nepaliCalendar = NepaliCalendar()
 
