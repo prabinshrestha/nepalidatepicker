@@ -1,5 +1,5 @@
-# nepalicalendar
-nepali calendar library for android
+# nepalidatepicker
+nepali datepicker library for android
 
     root build.gradle
     allprojects {
