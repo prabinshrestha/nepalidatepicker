@@ -33,7 +33,7 @@ class NepaliDatePicker : DialogFragment() {
 
     private lateinit var rootView: View
     private lateinit var nepaliDatePickerLogic: NepaliDatePickerLogic
-    lateinit var dateRVAdapter: DateRVAdapter
+    internal lateinit var dateRVAdapter: DateRVAdapter
     var dateListener: DateListener? = null
 
 
@@ -65,12 +65,12 @@ class NepaliDatePicker : DialogFragment() {
         nepaliDatePickerLogic.onActivityCreated()
     }
 
-    fun setNepaliYear(year: String) {
+    internal fun setNepaliYear(year: String) {
         tvYear.text = "" + year
     }
 
 
-    fun initAdapter() {
+    internal fun initAdapter() {
         dateRVAdapter = DateRVAdapter(activity!!.applicationContext)
         dateRVAdapter.dateListener = object : DateRVAdapter.DateListener {
             override fun onClickCalendar(month: Int?, day: Int?) {
@@ -91,16 +91,16 @@ class NepaliDatePicker : DialogFragment() {
         rvDateTable.adapter = dateRVAdapter
     }
 
-    fun updateDateList(dateList: List<List<CalendarMonthRow>>) {
+    internal fun updateDateList(dateList: List<List<CalendarMonthRow>>) {
         Timber.v("size of englishDate" + dateList.size)
         dateRVAdapter.updateDateList(dateList)
     }
 
-    fun showToast(error: String) {
+    internal fun showToast(error: String) {
         Toast.makeText(activity, error, Toast.LENGTH_LONG).show()
     }
 
-    fun setDate(selectedDate: String) {
+    internal fun setDate(selectedDate: String) {
         tvNepaliDate.setText(selectedDate)
     }
 }

@@ -6,8 +6,8 @@ import timber.log.Timber
 class NepaliCalendar {
 
     private var nepaliDateSource = HashMap<Int, Array<Int>>()
-    var englishDateHashMap = HashMap<String, MappedDate>()
-    var nepaliDateHashMap = HashMap<String, MappedDate>()
+    private var englishDateHashMap = HashMap<String, MappedDate>()
+    private var nepaliDateHashMap = HashMap<String, MappedDate>()
 
     constructor() {
         nepaliDateSource.put(2073, arrayOf(31, 32, 31, 32, 31, 30, 30, 30, 29, 29, 30, 31))
@@ -15,6 +15,18 @@ class NepaliCalendar {
         nepaliDateSource.put(2075, arrayOf(31, 31, 32, 31, 31, 31, 30, 29, 30, 29, 30, 30))
         nepaliDateSource.put(2076, arrayOf(31, 32, 31, 32, 31, 30, 30, 30, 29, 29, 30, 30))
         nepaliDateSource.put(2077, arrayOf(31, 32, 31, 32, 31, 30, 30, 30, 29, 30, 29, 31))
+        nepaliDateSource.put(2078, arrayOf(31, 31, 31, 32, 31, 31, 30, 29, 30, 29, 30, 30))
+        nepaliDateSource.put(2079, arrayOf(31, 31, 32, 31, 31, 31, 30, 29, 30, 29, 30, 30))
+        nepaliDateSource.put(2080, arrayOf(31, 32, 31, 32, 31, 30, 30, 30, 29, 29, 30, 30))
+        nepaliDateSource.put(2081, arrayOf(31, 31, 32, 32, 31, 30, 30, 30, 29, 30, 30, 30))
+        nepaliDateSource.put(2082, arrayOf(30, 32, 31, 32, 31, 30, 30, 30, 29, 30, 30, 30))
+        nepaliDateSource.put(2083, arrayOf(31, 31, 32, 31, 31, 30, 30, 30, 29, 30, 30, 30))
+        nepaliDateSource.put(2084, arrayOf(31, 31, 32, 31, 31, 30, 30, 30, 29, 30, 30, 30))
+        nepaliDateSource.put(2085, arrayOf(31, 32, 31, 32, 30, 31, 30, 30, 29, 30, 30, 30))
+        nepaliDateSource.put(2086, arrayOf(30, 32, 31, 32, 31, 30, 30, 30, 29, 30, 30, 30))
+        nepaliDateSource.put(2087, arrayOf(31, 31, 32, 31, 31, 31, 30, 30, 29, 30, 30, 30))
+        nepaliDateSource.put(2088, arrayOf(30, 31, 32, 32, 30, 31, 30, 30, 29, 30, 30, 30))
+        nepaliDateSource.put(2089, arrayOf(30, 32, 31, 32, 31, 30, 30, 30, 29, 30, 30, 30))
     }
 
 
@@ -36,7 +48,7 @@ class NepaliCalendar {
         englishDateHashMap.clear()
         nepaliDateHashMap.clear()
 
-        var englishDateList = getEnglishDateList(2017, 2020)
+        var englishDateList = getEnglishDateList(2017, 2032)
 
         // var mappingList = arrayListOf<MappedDate>()
 
@@ -114,7 +126,7 @@ class NepaliCalendar {
         return nepaliDateHashMap.get(date)
     }
 
-    fun constructNepaliCalendar(mappedDate: MappedDate?): List<List<CalendarMonthRow>> {
+    internal fun constructNepaliCalendar(mappedDate: MappedDate?): List<List<CalendarMonthRow>> {
         var dateMapperList = arrayListOf<MappedDate>()
 
         var yearInNepali = mappedDate?.nepaliYear
@@ -171,13 +183,13 @@ class NepaliCalendar {
         return nepaliTwelveMonthList
     }
 
-    fun printNepaliHashMap(){
+    private fun printNepaliHashMap(){
         for(data in nepaliDateHashMap){
             Timber.v("nep"+data.key)
         }
     }
 
-    fun printEnglishHashMap(){
+    private fun printEnglishHashMap(){
         for(data in englishDateHashMap){
             Timber.v("eng"+data.key)
         }

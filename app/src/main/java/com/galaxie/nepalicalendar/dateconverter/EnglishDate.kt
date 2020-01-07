@@ -1,7 +1,7 @@
 package com.galaxie.nepalicalendar.dateconverter
 
 
-class EnglishDate {
+internal class EnglishDate {
 
     var year: Int
     var isLeapYear: Boolean

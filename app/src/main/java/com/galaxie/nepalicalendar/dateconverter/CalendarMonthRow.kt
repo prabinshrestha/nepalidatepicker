@@ -1,6 +1,6 @@
 package com.galaxie.nepalicalendar.dateconverter
 
-class CalendarMonthRow {
+internal class CalendarMonthRow {
 
     var isWeekDay: Boolean
     var isEmptyMatrix: Boolean

@@ -1,7 +1,7 @@
 package com.galaxie.nepalicalendar.dateconverter
 
 
-class Month {
+internal class Month {
 
     companion object {
         val TOTAL_DAYS_IN_JAN = 31

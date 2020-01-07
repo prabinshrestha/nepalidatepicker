@@ -8,9 +8,9 @@ import kotlinx.android.synthetic.main.nepali_date_picker.*
 import timber.log.Timber
 
 
-class NepaliDatePickerLogic {
-    //
-    lateinit var fragment: NepaliDatePicker
+internal class NepaliDatePickerLogic {
+
+    var fragment: NepaliDatePicker
     var nepaliCalendar = NepaliCalendar()
     var dateMapper: MappedDate? = null;
     var year: Int = 0
@@ -121,9 +121,9 @@ class NepaliDatePickerLogic {
             //Timber.v("nepalli year shouldn't be less than 2074 : no data found for previous year!")
             fragment.showToast("Data not found for year 2073")
             return false
-        } else if (updatedYear == 2077) {
+        } else if (updatedYear == 2089) {
             // Timber.v("nepalli year should be less than 2077 : no data found for 2077!")
-            fragment.showToast("Data not found for year 2077")
+            fragment.showToast("Data not found for year 2089")
             return false
         }
         return true
@@ -165,7 +165,7 @@ class NepaliDatePickerLogic {
             fragment.setNepaliYear("" + year)
         }
     }
-    
+
     fun onClickCalendar(month: Int, day: Int) {
         Timber.v("on englishDate selection $year$dateSplitter$month$dateSplitter$day")
         this.month = month

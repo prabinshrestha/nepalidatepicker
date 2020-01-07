@@ -60,6 +60,7 @@ class MainActivity : AppCompatActivity() {
             nepaliDatePicker.arguments = bundle
             nepaliDatePicker.show(supportFragmentManager, "")
         })
+
     }
 
 

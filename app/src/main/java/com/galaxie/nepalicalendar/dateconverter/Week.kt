@@ -1,7 +1,7 @@
 package com.galaxie.nepalicalendar.dateconverter
 
 
-class Week {
+internal class Week {
     companion object {
         val SUN = "SUN"
         val MON = "MON"

@@ -15,7 +15,7 @@ import kotlinx.android.synthetic.main.nepali_date_picker_row.view.*
 import timber.log.Timber
 
 
-class DateRVAdapter : RecyclerView.Adapter<RecyclerView.ViewHolder> {
+internal class DateRVAdapter : RecyclerView.Adapter<RecyclerView.ViewHolder> {
 
     private var calendarMonthw: List<List<CalendarMonthRow>> = arrayListOf()
     private val layoutInflater: LayoutInflater
