@@ -1,18 +1,17 @@
 # nepalicalendar
 nepali calendar library for android
 
-root build.gradle
-allprojects {
-    repositories {
-        google()
-        jcenter()
-        maven{url 'https://jitpack.io'}
-        
-    }
-}
+    root build.gradle
+    allprojects {
+        repositories {
+            google()
+            jcenter()
+            maven{url 'https://jitpack.io'}
+                    }
+                }
 
-build.gradle
-implementation 'com.github.prabinshrestha:nepalidatepicker:1.0.0'
+    build.gradle
+    implementation 'com.github.prabinshrestha:nepalidatepicker:1.0.0'
 
     fun initDate() {
 
