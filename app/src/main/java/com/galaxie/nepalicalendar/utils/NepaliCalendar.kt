@@ -1,5 +1,9 @@
-package com.galaxie.nepalicalendar.dateconverter
+package com.galaxie.nepalicalendar.utils
 
+import com.galaxie.nepalicalendar.picker.CalendarMonthRow
+import com.galaxie.nepalicalendar.picker.EnglishDate
+import com.galaxie.nepalicalendar.picker.LeapYearUtils
+import com.galaxie.nepalicalendar.picker.Week
 import timber.log.Timber
 
 
@@ -35,8 +39,16 @@ class NepaliCalendar {
         var englishDateList = arrayListOf<EnglishDate>()
 
         for (year in startYear..untillThisYear) {
-            var isLeapYear = LeapYearUtils.isLeapYear(year)
-            englishDateList.add(EnglishDate(year, isLeapYear))
+            var isLeapYear =
+                LeapYearUtils.isLeapYear(
+                    year
+                )
+            englishDateList.add(
+                EnglishDate(
+                    year,
+                    isLeapYear
+                )
+            )
         }
 
         return englishDateList
@@ -76,8 +88,30 @@ class NepaliCalendar {
 
                     var formattedDateEnglish = "" + englishYear + "_" + String.format("%02d", englishMonthIndex) + "_" + String.format("%02d", day)
                     var formattedDateNepali = "" + englishYearMatchWithNepali + "_" + String.format("%02d", englishMonthMatchWithNepali) + "_" + String.format("%02d", englishDayMatchWithNepali)
-                    englishDateHashMap.put(formattedDateEnglish, MappedDate(englishYear, englishMonthIndex, day, englishYearMatchWithNepali, englishMonthMatchWithNepali, englishDayMatchWithNepali, dayInWeek, nepaliMonthDaysTotal))
-                    nepaliDateHashMap.put(formattedDateNepali, MappedDate(englishYear, englishMonthIndex, day, englishYearMatchWithNepali, englishMonthMatchWithNepali, englishDayMatchWithNepali, dayInWeek, nepaliMonthDaysTotal))
+                    englishDateHashMap.put(formattedDateEnglish,
+                        MappedDate(
+                            englishYear,
+                            englishMonthIndex,
+                            day,
+                            englishYearMatchWithNepali,
+                            englishMonthMatchWithNepali,
+                            englishDayMatchWithNepali,
+                            dayInWeek,
+                            nepaliMonthDaysTotal
+                        )
+                    )
+                    nepaliDateHashMap.put(formattedDateNepali,
+                        MappedDate(
+                            englishYear,
+                            englishMonthIndex,
+                            day,
+                            englishYearMatchWithNepali,
+                            englishMonthMatchWithNepali,
+                            englishDayMatchWithNepali,
+                            dayInWeek,
+                            nepaliMonthDaysTotal
+                        )
+                    )
 
                    // Timber.v("formatdatenepali"+formattedDateNepali +","+formattedDateEnglish)
                    // Timber.v("formatdateenglish"+formattedDateEnglish+","+formattedDateNepali)
@@ -151,8 +185,14 @@ class NepaliCalendar {
             //we are going to create 7x7 matrix =49
             calendarMonthRowList = ArrayList<CalendarMonthRow>()
             for (day in 0..6) {
-                calendarMonthRowList.add(CalendarMonthRow(true, false, false,
-                    Week.whichDayInWeek(day), null, null))
+                calendarMonthRowList.add(
+                    CalendarMonthRow(
+                        true, false, false,
+                        Week.whichDayInWeek(
+                            day
+                        ), null, null
+                    )
+                )
             }
 
             var totalDayofMonth = dateMapper!!.totalNepaliDaysInMonth
@@ -160,13 +200,31 @@ class NepaliCalendar {
 
             //calculate pre emty box
             for (i in 0..weekdayIndex - 1) {
-                calendarMonthRowList.add(CalendarMonthRow(false, true, false, null, 0, 0))
+                calendarMonthRowList.add(
+                    CalendarMonthRow(
+                        false,
+                        true,
+                        false,
+                        null,
+                        0,
+                        0
+                    )
+                )
             }
 
 
             //calculate the real englishDate
             for (day in 1..totalDayofMonth) {
-                calendarMonthRowList.add(CalendarMonthRow(false, false, true, null, day, 0))
+                calendarMonthRowList.add(
+                    CalendarMonthRow(
+                        false,
+                        false,
+                        true,
+                        null,
+                        day,
+                        0
+                    )
+                )
             }
 
             var totalMatrixSize = 49
@@ -175,7 +233,16 @@ class NepaliCalendar {
             var remainingPostGap = 49 - (7 + (weekdayIndex) + totalDayofMonth)
 
             for (i in 1..remainingPostGap) {
-                calendarMonthRowList.add(CalendarMonthRow(false, true, false, null, 0, 0))
+                calendarMonthRowList.add(
+                    CalendarMonthRow(
+                        false,
+                        true,
+                        false,
+                        null,
+                        0,
+                        0
+                    )
+                )
             }
 
             nepaliTwelveMonthList.add(calendarMonthRowList)

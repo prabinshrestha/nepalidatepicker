@@ -1,4 +1,7 @@
-package com.galaxie.nepalicalendar.dateconverter
+package com.galaxie.nepalicalendar.utils
+
+import com.galaxie.nepalicalendar.picker.Month
+import com.galaxie.nepalicalendar.picker.Week
 
 
 class MappedDate {
@@ -35,15 +38,24 @@ class MappedDate {
     }
 
     fun setWhichDayInWeek(dayInWeek: Int) {
-        this.whichDayInWeek = Week.whichDayInWeek(dayInWeek)
+        this.whichDayInWeek =
+            Week.whichDayInWeek(
+                dayInWeek
+            )
     }
 
     fun setWhichNepaliMonth(nepaliMonth: Int) {
-        this.whichNepaliMonth = Month.whichNepaliMonth(nepaliMonth)
+        this.whichNepaliMonth =
+            Month.whichNepaliMonth(
+                nepaliMonth
+            )
     }
 
     fun setWhichEnglishMonth(englishMonth: Int) {
-        this.whichEnglishMonth = Month.whichEnglishMonth(englishMonth)
+        this.whichEnglishMonth =
+            Month.whichEnglishMonth(
+                englishMonth
+            )
     }
 
     override fun toString(): String {

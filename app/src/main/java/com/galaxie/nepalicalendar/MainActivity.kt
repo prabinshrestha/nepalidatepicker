@@ -3,8 +3,8 @@ package com.galaxie.nepalicalendar
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
-import com.galaxie.nepalicalendar.dateconverter.NepaliCalendar
-import com.galaxie.nepalicalendar.dateconverter.view.NepaliDatePicker
+import com.galaxie.nepalicalendar.utils.NepaliCalendar
+import com.galaxie.nepalicalendar.picker.view.NepaliDatePicker
 import kotlinx.android.synthetic.main.activity_main.*
 import timber.log.Timber
 import java.util.*

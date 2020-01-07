@@ -1,4 +1,4 @@
-package com.galaxie.nepalicalendar.dateconverter.view
+package com.galaxie.nepalicalendar.picker.view
 
 import android.app.Dialog
 import android.graphics.Color
@@ -8,14 +8,13 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.view.Window
-import android.widget.RelativeLayout
 import android.widget.Toast
 import androidx.fragment.app.DialogFragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.PagerSnapHelper
 import com.galaxie.nepalicalendar.R
-import com.galaxie.nepalicalendar.dateconverter.CalendarMonthRow
-import com.galaxie.nepalicalendar.dateconverter.Month
+import com.galaxie.nepalicalendar.picker.CalendarMonthRow
+import com.galaxie.nepalicalendar.picker.Month
 import kotlinx.android.synthetic.main.nepali_date_picker.*
 import timber.log.Timber
 

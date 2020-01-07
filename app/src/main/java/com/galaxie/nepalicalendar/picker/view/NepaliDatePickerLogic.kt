@@ -1,9 +1,9 @@
-package com.galaxie.nepalicalendar.dateconverter.view
+package com.galaxie.nepalicalendar.picker.view
 
 import android.view.View
-import com.galaxie.nepalicalendar.dateconverter.MappedDate
-import com.galaxie.nepalicalendar.dateconverter.Month
-import com.galaxie.nepalicalendar.dateconverter.NepaliCalendar
+import com.galaxie.nepalicalendar.utils.MappedDate
+import com.galaxie.nepalicalendar.picker.Month
+import com.galaxie.nepalicalendar.utils.NepaliCalendar
 import kotlinx.android.synthetic.main.nepali_date_picker.*
 import timber.log.Timber
 
