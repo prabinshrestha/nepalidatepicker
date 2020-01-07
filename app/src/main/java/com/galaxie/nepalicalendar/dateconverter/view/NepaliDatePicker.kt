@@ -15,6 +15,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.PagerSnapHelper
 import com.galaxie.nepalicalendar.R
 import com.galaxie.nepalicalendar.dateconverter.CalendarMonthRow
+import com.galaxie.nepalicalendar.dateconverter.Month
 import kotlinx.android.synthetic.main.nepali_date_picker.*
 import timber.log.Timber
 
@@ -27,11 +28,11 @@ class NepaliDatePicker : DialogFragment() {
     }
 
     interface DateListener {
-        fun onDateSelected(selectedNepaliDate: String?,selectedEnglishDate:String?)
+        fun onDateSelected(selectedNepaliDate: String?, selectedEnglishDate: String?)
     }
 
     private lateinit var rootView: View
-    lateinit var nepaliDatePickerLogic: NepaliDatePickerLogic
+    private lateinit var nepaliDatePickerLogic: NepaliDatePickerLogic
     lateinit var dateRVAdapter: DateRVAdapter
     var dateListener: DateListener? = null
 
@@ -44,13 +45,16 @@ class NepaliDatePicker : DialogFragment() {
     }
 
 
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         retainInstance = true
     }
 
-    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
+    override fun onCreateView(
+        inflater: LayoutInflater,
+        container: ViewGroup?,
+        savedInstanceState: Bundle?
+    ): View? {
         rootView = inflater!!.inflate(R.layout.nepali_date_picker, container, false)
         return rootView
     }
@@ -62,7 +66,7 @@ class NepaliDatePicker : DialogFragment() {
     }
 
     fun setNepaliYear(year: String) {
-        tvYear.text = ""+year
+        tvYear.text = "" + year
     }
 
 
@@ -74,10 +78,16 @@ class NepaliDatePicker : DialogFragment() {
                     nepaliDatePickerLogic.onClickCalendar(month, day)
                 }
             }
+
+            override fun onMonthSelected(month: Int?) {
+                Timber.v("month selected ${Month.whichNepaliMonth(month!!)}")
+                rvDateTable.smoothScrollToPosition(month!!)
+            }
         }
         val snapHelper = PagerSnapHelper()
         snapHelper.attachToRecyclerView(rvDateTable)
-        rvDateTable.layoutManager = LinearLayoutManager(activity, LinearLayoutManager.HORIZONTAL, false)
+        rvDateTable.layoutManager =
+            LinearLayoutManager(activity, LinearLayoutManager.HORIZONTAL, false)
         rvDateTable.adapter = dateRVAdapter
     }
 
@@ -87,7 +97,7 @@ class NepaliDatePicker : DialogFragment() {
     }
 
     fun showToast(error: String) {
-       Toast.makeText(activity, error,Toast.LENGTH_LONG)
+        Toast.makeText(activity, error, Toast.LENGTH_LONG).show()
     }
 
     fun setDate(selectedDate: String) {

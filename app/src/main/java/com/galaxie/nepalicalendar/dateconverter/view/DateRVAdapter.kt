@@ -4,6 +4,7 @@ import android.content.Context
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.appcompat.widget.AppCompatImageView
 import androidx.appcompat.widget.AppCompatTextView
 import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.RecyclerView
@@ -25,6 +26,7 @@ class DateRVAdapter : RecyclerView.Adapter<RecyclerView.ViewHolder> {
 
     interface DateListener {
         fun onClickCalendar(month: Int?, day: Int?)
+        fun onMonthSelected(month: Int?)
     }
 
     constructor(context: Context) {
@@ -33,7 +35,8 @@ class DateRVAdapter : RecyclerView.Adapter<RecyclerView.ViewHolder> {
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerView.ViewHolder {
-        layoutView = LayoutInflater.from(parent.context).inflate(R.layout.nepali_date_picker_row, parent, false)
+        layoutView = LayoutInflater.from(parent.context)
+            .inflate(R.layout.nepali_date_picker_row, parent, false)
         return PropertyRowViewHolder(layoutView)
     }
 
@@ -82,9 +85,19 @@ class DateRVAdapter : RecyclerView.Adapter<RecyclerView.ViewHolder> {
                 var calendarMonthRow = calendarMonth.get(7)
                 viewHolder.btnGrid7.setText("" + calendarMonthRow.gatey)
                 if (calendarMonthRow.isClicked) {
-                    viewHolder.btnGrid7.setBackgroundColor(ContextCompat.getColor(context, R.color.gray_light))
-                }else {
-                    viewHolder.btnGrid7.setBackgroundColor(ContextCompat.getColor(context, R.color.calendar_false))
+                    viewHolder.btnGrid7.setBackgroundColor(
+                        ContextCompat.getColor(
+                            context,
+                            R.color.gray_light
+                        )
+                    )
+                } else {
+                    viewHolder.btnGrid7.setBackgroundColor(
+                        ContextCompat.getColor(
+                            context,
+                            R.color.calendar_false
+                        )
+                    )
                     viewHolder.btnGrid7.setBackgroundResource(R.drawable.cell_border)
                 }
                 viewHolder.btnGrid7.setOnClickListener(object : View.OnClickListener {
@@ -105,9 +118,19 @@ class DateRVAdapter : RecyclerView.Adapter<RecyclerView.ViewHolder> {
                 var calendarMonthRow = calendarMonth.get(8)
                 viewHolder.btnGrid8.setText("" + calendarMonthRow.gatey)
                 if (calendarMonthRow.isClicked) {
-                    viewHolder.btnGrid8.setBackgroundColor(ContextCompat.getColor(context, R.color.gray_light))
-                }else {
-                    viewHolder.btnGrid8.setBackgroundColor(ContextCompat.getColor(context, R.color.calendar_false))
+                    viewHolder.btnGrid8.setBackgroundColor(
+                        ContextCompat.getColor(
+                            context,
+                            R.color.gray_light
+                        )
+                    )
+                } else {
+                    viewHolder.btnGrid8.setBackgroundColor(
+                        ContextCompat.getColor(
+                            context,
+                            R.color.calendar_false
+                        )
+                    )
                     viewHolder.btnGrid8.setBackgroundResource(R.drawable.cell_border)
                 }
                 viewHolder.btnGrid8.setOnClickListener(object : View.OnClickListener {
@@ -129,9 +152,19 @@ class DateRVAdapter : RecyclerView.Adapter<RecyclerView.ViewHolder> {
 
                 viewHolder.btnGrid9.setText("" + calendarMonthRow.gatey)
                 if (calendarMonthRow.isClicked) {
-                    viewHolder.btnGrid9.setBackgroundColor(ContextCompat.getColor(context, R.color.gray_light))
-                }else {
-                    viewHolder.btnGrid9.setBackgroundColor(ContextCompat.getColor(context, R.color.calendar_false))
+                    viewHolder.btnGrid9.setBackgroundColor(
+                        ContextCompat.getColor(
+                            context,
+                            R.color.gray_light
+                        )
+                    )
+                } else {
+                    viewHolder.btnGrid9.setBackgroundColor(
+                        ContextCompat.getColor(
+                            context,
+                            R.color.calendar_false
+                        )
+                    )
                     viewHolder.btnGrid9.setBackgroundResource(R.drawable.cell_border)
                 }
                 viewHolder.btnGrid9.setOnClickListener(object : View.OnClickListener {
@@ -152,9 +185,19 @@ class DateRVAdapter : RecyclerView.Adapter<RecyclerView.ViewHolder> {
 
                 viewHolder.btnGrid10.setText("" + calendarMonthRow.gatey)
                 if (calendarMonthRow.isClicked) {
-                    viewHolder.btnGrid10.setBackgroundColor(ContextCompat.getColor(context, R.color.gray_light))
-                }else {
-                    viewHolder.btnGrid10.setBackgroundColor(ContextCompat.getColor(context, R.color.calendar_false))
+                    viewHolder.btnGrid10.setBackgroundColor(
+                        ContextCompat.getColor(
+                            context,
+                            R.color.gray_light
+                        )
+                    )
+                } else {
+                    viewHolder.btnGrid10.setBackgroundColor(
+                        ContextCompat.getColor(
+                            context,
+                            R.color.calendar_false
+                        )
+                    )
                     viewHolder.btnGrid10.setBackgroundResource(R.drawable.cell_border)
                 }
                 viewHolder.btnGrid10.setOnClickListener(object : View.OnClickListener {
@@ -175,9 +218,19 @@ class DateRVAdapter : RecyclerView.Adapter<RecyclerView.ViewHolder> {
 
                 viewHolder.btnGrid11.setText("" + calendarMonthRow.gatey)
                 if (calendarMonthRow.isClicked) {
-                    viewHolder.btnGrid11.setBackgroundColor(ContextCompat.getColor(context, R.color.gray_light))
-                }else {
-                    viewHolder.btnGrid11.setBackgroundColor(ContextCompat.getColor(context, R.color.calendar_false))
+                    viewHolder.btnGrid11.setBackgroundColor(
+                        ContextCompat.getColor(
+                            context,
+                            R.color.gray_light
+                        )
+                    )
+                } else {
+                    viewHolder.btnGrid11.setBackgroundColor(
+                        ContextCompat.getColor(
+                            context,
+                            R.color.calendar_false
+                        )
+                    )
                     viewHolder.btnGrid11.setBackgroundResource(R.drawable.cell_border)
                 }
                 viewHolder.btnGrid11.setOnClickListener(object : View.OnClickListener {
@@ -197,9 +250,19 @@ class DateRVAdapter : RecyclerView.Adapter<RecyclerView.ViewHolder> {
                 var calendarMonthRow = calendarMonth.get(12)
                 viewHolder.btnGrid12.setText("" + calendarMonthRow.gatey)
                 if (calendarMonthRow.isClicked) {
-                    viewHolder.btnGrid12.setBackgroundColor(ContextCompat.getColor(context, R.color.gray_light))
-                }else {
-                    viewHolder.btnGrid12.setBackgroundColor(ContextCompat.getColor(context, R.color.calendar_false))
+                    viewHolder.btnGrid12.setBackgroundColor(
+                        ContextCompat.getColor(
+                            context,
+                            R.color.gray_light
+                        )
+                    )
+                } else {
+                    viewHolder.btnGrid12.setBackgroundColor(
+                        ContextCompat.getColor(
+                            context,
+                            R.color.calendar_false
+                        )
+                    )
                     viewHolder.btnGrid12.setBackgroundResource(R.drawable.cell_border)
                 }
                 viewHolder.btnGrid12.setOnClickListener(object : View.OnClickListener {
@@ -220,9 +283,19 @@ class DateRVAdapter : RecyclerView.Adapter<RecyclerView.ViewHolder> {
 
                 viewHolder.btnGrid13.setText("" + calendarMonthRow.gatey)
                 if (calendarMonthRow.isClicked) {
-                    viewHolder.btnGrid13.setBackgroundColor(ContextCompat.getColor(context, R.color.gray_light))
-                }else {
-                    viewHolder.btnGrid13.setBackgroundColor(ContextCompat.getColor(context, R.color.calendar_false))
+                    viewHolder.btnGrid13.setBackgroundColor(
+                        ContextCompat.getColor(
+                            context,
+                            R.color.gray_light
+                        )
+                    )
+                } else {
+                    viewHolder.btnGrid13.setBackgroundColor(
+                        ContextCompat.getColor(
+                            context,
+                            R.color.calendar_false
+                        )
+                    )
                     viewHolder.btnGrid13.setBackgroundResource(R.drawable.cell_border)
                 }
                 viewHolder.btnGrid13.setOnClickListener(object : View.OnClickListener {
@@ -243,9 +316,19 @@ class DateRVAdapter : RecyclerView.Adapter<RecyclerView.ViewHolder> {
 
                 viewHolder.btnGrid14.setText("" + calendarMonthRow.gatey)
                 if (calendarMonthRow.isClicked) {
-                    viewHolder.btnGrid14.setBackgroundColor(ContextCompat.getColor(context, R.color.gray_light))
-                }else {
-                    viewHolder.btnGrid14.setBackgroundColor(ContextCompat.getColor(context, R.color.calendar_false))
+                    viewHolder.btnGrid14.setBackgroundColor(
+                        ContextCompat.getColor(
+                            context,
+                            R.color.gray_light
+                        )
+                    )
+                } else {
+                    viewHolder.btnGrid14.setBackgroundColor(
+                        ContextCompat.getColor(
+                            context,
+                            R.color.calendar_false
+                        )
+                    )
                     viewHolder.btnGrid14.setBackgroundResource(R.drawable.cell_border)
                 }
                 viewHolder.btnGrid14.setOnClickListener(object : View.OnClickListener {
@@ -266,9 +349,19 @@ class DateRVAdapter : RecyclerView.Adapter<RecyclerView.ViewHolder> {
 
                 viewHolder.btnGrid15.setText("" + calendarMonthRow.gatey)
                 if (calendarMonthRow.isClicked) {
-                    viewHolder.btnGrid15.setBackgroundColor(ContextCompat.getColor(context, R.color.gray_light))
-                }else {
-                    viewHolder.btnGrid15.setBackgroundColor(ContextCompat.getColor(context, R.color.calendar_false))
+                    viewHolder.btnGrid15.setBackgroundColor(
+                        ContextCompat.getColor(
+                            context,
+                            R.color.gray_light
+                        )
+                    )
+                } else {
+                    viewHolder.btnGrid15.setBackgroundColor(
+                        ContextCompat.getColor(
+                            context,
+                            R.color.calendar_false
+                        )
+                    )
                     viewHolder.btnGrid15.setBackgroundResource(R.drawable.cell_border)
                 }
                 viewHolder.btnGrid15.setOnClickListener(object : View.OnClickListener {
@@ -289,9 +382,19 @@ class DateRVAdapter : RecyclerView.Adapter<RecyclerView.ViewHolder> {
 
                 viewHolder.btnGrid16.setText("" + calendarMonthRow.gatey)
                 if (calendarMonthRow.isClicked) {
-                    viewHolder.btnGrid16.setBackgroundColor(ContextCompat.getColor(context, R.color.gray_light))
-                }else {
-                    viewHolder.btnGrid16.setBackgroundColor(ContextCompat.getColor(context, R.color.calendar_false))
+                    viewHolder.btnGrid16.setBackgroundColor(
+                        ContextCompat.getColor(
+                            context,
+                            R.color.gray_light
+                        )
+                    )
+                } else {
+                    viewHolder.btnGrid16.setBackgroundColor(
+                        ContextCompat.getColor(
+                            context,
+                            R.color.calendar_false
+                        )
+                    )
                     viewHolder.btnGrid16.setBackgroundResource(R.drawable.cell_border)
                 }
                 viewHolder.btnGrid16.setOnClickListener(object : View.OnClickListener {
@@ -312,9 +415,19 @@ class DateRVAdapter : RecyclerView.Adapter<RecyclerView.ViewHolder> {
 
                 viewHolder.btnGrid17.setText("" + calendarMonthRow.gatey)
                 if (calendarMonthRow.isClicked) {
-                    viewHolder.btnGrid17.setBackgroundColor(ContextCompat.getColor(context, R.color.gray_light))
-                }else {
-                    viewHolder.btnGrid17.setBackgroundColor(ContextCompat.getColor(context, R.color.calendar_false))
+                    viewHolder.btnGrid17.setBackgroundColor(
+                        ContextCompat.getColor(
+                            context,
+                            R.color.gray_light
+                        )
+                    )
+                } else {
+                    viewHolder.btnGrid17.setBackgroundColor(
+                        ContextCompat.getColor(
+                            context,
+                            R.color.calendar_false
+                        )
+                    )
                     viewHolder.btnGrid17.setBackgroundResource(R.drawable.cell_border)
                 }
                 viewHolder.btnGrid17.setOnClickListener(object : View.OnClickListener {
@@ -333,11 +446,21 @@ class DateRVAdapter : RecyclerView.Adapter<RecyclerView.ViewHolder> {
             if (calendarMonth.get(18).isRealDate) {
                 var calendarMonthRow = calendarMonth.get(18)
 
-                viewHolder.btnGrid18.setText("" +calendarMonthRow.gatey)
+                viewHolder.btnGrid18.setText("" + calendarMonthRow.gatey)
                 if (calendarMonthRow.isClicked) {
-                    viewHolder.btnGrid18.setBackgroundColor(ContextCompat.getColor(context, R.color.gray_light))
-                }else {
-                    viewHolder.btnGrid18.setBackgroundColor(ContextCompat.getColor(context, R.color.calendar_false))
+                    viewHolder.btnGrid18.setBackgroundColor(
+                        ContextCompat.getColor(
+                            context,
+                            R.color.gray_light
+                        )
+                    )
+                } else {
+                    viewHolder.btnGrid18.setBackgroundColor(
+                        ContextCompat.getColor(
+                            context,
+                            R.color.calendar_false
+                        )
+                    )
                     viewHolder.btnGrid18.setBackgroundResource(R.drawable.cell_border)
                 }
                 viewHolder.btnGrid18.setOnClickListener(object : View.OnClickListener {
@@ -358,9 +481,19 @@ class DateRVAdapter : RecyclerView.Adapter<RecyclerView.ViewHolder> {
 
                 viewHolder.btnGrid19.setText("" + calendarMonthRow.gatey)
                 if (calendarMonthRow.isClicked) {
-                    viewHolder.btnGrid19.setBackgroundColor(ContextCompat.getColor(context, R.color.gray_light))
-                }else {
-                    viewHolder.btnGrid19.setBackgroundColor(ContextCompat.getColor(context, R.color.calendar_false))
+                    viewHolder.btnGrid19.setBackgroundColor(
+                        ContextCompat.getColor(
+                            context,
+                            R.color.gray_light
+                        )
+                    )
+                } else {
+                    viewHolder.btnGrid19.setBackgroundColor(
+                        ContextCompat.getColor(
+                            context,
+                            R.color.calendar_false
+                        )
+                    )
                     viewHolder.btnGrid19.setBackgroundResource(R.drawable.cell_border)
                 }
                 viewHolder.btnGrid19.setOnClickListener(object : View.OnClickListener {
@@ -381,9 +514,19 @@ class DateRVAdapter : RecyclerView.Adapter<RecyclerView.ViewHolder> {
 
                 viewHolder.btnGrid20.setText("" + calendarMonthRow.gatey)
                 if (calendarMonthRow.isClicked) {
-                    viewHolder.btnGrid20.setBackgroundColor(ContextCompat.getColor(context, R.color.gray_light))
-                }else {
-                    viewHolder.btnGrid20.setBackgroundColor(ContextCompat.getColor(context, R.color.calendar_false))
+                    viewHolder.btnGrid20.setBackgroundColor(
+                        ContextCompat.getColor(
+                            context,
+                            R.color.gray_light
+                        )
+                    )
+                } else {
+                    viewHolder.btnGrid20.setBackgroundColor(
+                        ContextCompat.getColor(
+                            context,
+                            R.color.calendar_false
+                        )
+                    )
                     viewHolder.btnGrid20.setBackgroundResource(R.drawable.cell_border)
                 }
                 viewHolder.btnGrid20.setOnClickListener(object : View.OnClickListener {
@@ -404,9 +547,19 @@ class DateRVAdapter : RecyclerView.Adapter<RecyclerView.ViewHolder> {
 
                 viewHolder.btnGrid21.setText("" + calendarMonthRow.gatey)
                 if (calendarMonthRow.isClicked) {
-                    viewHolder.btnGrid21.setBackgroundColor(ContextCompat.getColor(context, R.color.gray_light))
-                }else {
-                    viewHolder.btnGrid21.setBackgroundColor(ContextCompat.getColor(context, R.color.calendar_false))
+                    viewHolder.btnGrid21.setBackgroundColor(
+                        ContextCompat.getColor(
+                            context,
+                            R.color.gray_light
+                        )
+                    )
+                } else {
+                    viewHolder.btnGrid21.setBackgroundColor(
+                        ContextCompat.getColor(
+                            context,
+                            R.color.calendar_false
+                        )
+                    )
                     viewHolder.btnGrid21.setBackgroundResource(R.drawable.cell_border)
                 }
                 viewHolder.btnGrid21.setOnClickListener(object : View.OnClickListener {
@@ -427,9 +580,19 @@ class DateRVAdapter : RecyclerView.Adapter<RecyclerView.ViewHolder> {
 
                 viewHolder.btnGrid22.setText("" + calendarMonthRow.gatey)
                 if (calendarMonthRow.isClicked) {
-                    viewHolder.btnGrid22.setBackgroundColor(ContextCompat.getColor(context, R.color.gray_light))
-                }else {
-                    viewHolder.btnGrid22.setBackgroundColor(ContextCompat.getColor(context, R.color.calendar_false))
+                    viewHolder.btnGrid22.setBackgroundColor(
+                        ContextCompat.getColor(
+                            context,
+                            R.color.gray_light
+                        )
+                    )
+                } else {
+                    viewHolder.btnGrid22.setBackgroundColor(
+                        ContextCompat.getColor(
+                            context,
+                            R.color.calendar_false
+                        )
+                    )
                     viewHolder.btnGrid22.setBackgroundResource(R.drawable.cell_border)
                 }
                 viewHolder.btnGrid22.setOnClickListener(object : View.OnClickListener {
@@ -450,9 +613,19 @@ class DateRVAdapter : RecyclerView.Adapter<RecyclerView.ViewHolder> {
 
                 viewHolder.btnGrid23.setText("" + calendarMonthRow.gatey)
                 if (calendarMonthRow.isClicked) {
-                    viewHolder.btnGrid23.setBackgroundColor(ContextCompat.getColor(context, R.color.gray_light))
-                }else {
-                    viewHolder.btnGrid23.setBackgroundColor(ContextCompat.getColor(context, R.color.calendar_false))
+                    viewHolder.btnGrid23.setBackgroundColor(
+                        ContextCompat.getColor(
+                            context,
+                            R.color.gray_light
+                        )
+                    )
+                } else {
+                    viewHolder.btnGrid23.setBackgroundColor(
+                        ContextCompat.getColor(
+                            context,
+                            R.color.calendar_false
+                        )
+                    )
                     viewHolder.btnGrid23.setBackgroundResource(R.drawable.cell_border)
                 }
                 viewHolder.btnGrid23.setOnClickListener(object : View.OnClickListener {
@@ -473,9 +646,19 @@ class DateRVAdapter : RecyclerView.Adapter<RecyclerView.ViewHolder> {
 
                 viewHolder.btnGrid24.setText("" + calendarMonthRow.gatey)
                 if (calendarMonthRow.isClicked) {
-                    viewHolder.btnGrid24.setBackgroundColor(ContextCompat.getColor(context, R.color.gray_light))
-                }else {
-                    viewHolder.btnGrid24.setBackgroundColor(ContextCompat.getColor(context, R.color.calendar_false))
+                    viewHolder.btnGrid24.setBackgroundColor(
+                        ContextCompat.getColor(
+                            context,
+                            R.color.gray_light
+                        )
+                    )
+                } else {
+                    viewHolder.btnGrid24.setBackgroundColor(
+                        ContextCompat.getColor(
+                            context,
+                            R.color.calendar_false
+                        )
+                    )
                     viewHolder.btnGrid24.setBackgroundResource(R.drawable.cell_border)
                 }
                 viewHolder.btnGrid24.setOnClickListener(object : View.OnClickListener {
@@ -496,9 +679,19 @@ class DateRVAdapter : RecyclerView.Adapter<RecyclerView.ViewHolder> {
 
                 viewHolder.btnGrid25.setText("" + calendarMonthRow.gatey)
                 if (calendarMonthRow.isClicked) {
-                    viewHolder.btnGrid25.setBackgroundColor(ContextCompat.getColor(context, R.color.gray_light))
-                }else {
-                    viewHolder.btnGrid25.setBackgroundColor(ContextCompat.getColor(context, R.color.calendar_false))
+                    viewHolder.btnGrid25.setBackgroundColor(
+                        ContextCompat.getColor(
+                            context,
+                            R.color.gray_light
+                        )
+                    )
+                } else {
+                    viewHolder.btnGrid25.setBackgroundColor(
+                        ContextCompat.getColor(
+                            context,
+                            R.color.calendar_false
+                        )
+                    )
                     viewHolder.btnGrid25.setBackgroundResource(R.drawable.cell_border)
                 }
                 viewHolder.btnGrid25.setOnClickListener(object : View.OnClickListener {
@@ -519,9 +712,19 @@ class DateRVAdapter : RecyclerView.Adapter<RecyclerView.ViewHolder> {
 
                 viewHolder.btnGrid26.setText("" + calendarMonthRow.gatey)
                 if (calendarMonthRow.isClicked) {
-                    viewHolder.btnGrid26.setBackgroundColor(ContextCompat.getColor(context, R.color.gray_light))
-                }else {
-                    viewHolder.btnGrid26.setBackgroundColor(ContextCompat.getColor(context, R.color.calendar_false))
+                    viewHolder.btnGrid26.setBackgroundColor(
+                        ContextCompat.getColor(
+                            context,
+                            R.color.gray_light
+                        )
+                    )
+                } else {
+                    viewHolder.btnGrid26.setBackgroundColor(
+                        ContextCompat.getColor(
+                            context,
+                            R.color.calendar_false
+                        )
+                    )
                     viewHolder.btnGrid26.setBackgroundResource(R.drawable.cell_border)
                 }
                 viewHolder.btnGrid26.setOnClickListener(object : View.OnClickListener {
@@ -542,9 +745,19 @@ class DateRVAdapter : RecyclerView.Adapter<RecyclerView.ViewHolder> {
 
                 viewHolder.btnGrid27.setText("" + calendarMonthRow.gatey)
                 if (calendarMonthRow.isClicked) {
-                    viewHolder.btnGrid27.setBackgroundColor(ContextCompat.getColor(context, R.color.gray_light))
-                }else {
-                    viewHolder.btnGrid27.setBackgroundColor(ContextCompat.getColor(context, R.color.calendar_false))
+                    viewHolder.btnGrid27.setBackgroundColor(
+                        ContextCompat.getColor(
+                            context,
+                            R.color.gray_light
+                        )
+                    )
+                } else {
+                    viewHolder.btnGrid27.setBackgroundColor(
+                        ContextCompat.getColor(
+                            context,
+                            R.color.calendar_false
+                        )
+                    )
                     viewHolder.btnGrid27.setBackgroundResource(R.drawable.cell_border)
                 }
                 viewHolder.btnGrid27.setOnClickListener(object : View.OnClickListener {
@@ -565,9 +778,19 @@ class DateRVAdapter : RecyclerView.Adapter<RecyclerView.ViewHolder> {
 
                 viewHolder.btnGrid28.setText("" + calendarMonthRow.gatey)
                 if (calendarMonthRow.isClicked) {
-                    viewHolder.btnGrid28.setBackgroundColor(ContextCompat.getColor(context, R.color.gray_light))
-                }else {
-                    viewHolder.btnGrid28.setBackgroundColor(ContextCompat.getColor(context, R.color.calendar_false))
+                    viewHolder.btnGrid28.setBackgroundColor(
+                        ContextCompat.getColor(
+                            context,
+                            R.color.gray_light
+                        )
+                    )
+                } else {
+                    viewHolder.btnGrid28.setBackgroundColor(
+                        ContextCompat.getColor(
+                            context,
+                            R.color.calendar_false
+                        )
+                    )
                     viewHolder.btnGrid28.setBackgroundResource(R.drawable.cell_border)
                 }
                 viewHolder.btnGrid28.setOnClickListener(object : View.OnClickListener {
@@ -588,9 +811,19 @@ class DateRVAdapter : RecyclerView.Adapter<RecyclerView.ViewHolder> {
 
                 viewHolder.btnGrid29.setText("" + calendarMonthRow.gatey)
                 if (calendarMonthRow.isClicked) {
-                    viewHolder.btnGrid29.setBackgroundColor(ContextCompat.getColor(context, R.color.gray_light))
-                }else {
-                    viewHolder.btnGrid29.setBackgroundColor(ContextCompat.getColor(context, R.color.calendar_false))
+                    viewHolder.btnGrid29.setBackgroundColor(
+                        ContextCompat.getColor(
+                            context,
+                            R.color.gray_light
+                        )
+                    )
+                } else {
+                    viewHolder.btnGrid29.setBackgroundColor(
+                        ContextCompat.getColor(
+                            context,
+                            R.color.calendar_false
+                        )
+                    )
                     viewHolder.btnGrid29.setBackgroundResource(R.drawable.cell_border)
                 }
                 viewHolder.btnGrid29.setOnClickListener(object : View.OnClickListener {
@@ -611,9 +844,19 @@ class DateRVAdapter : RecyclerView.Adapter<RecyclerView.ViewHolder> {
 
                 viewHolder.btnGrid30.setText("" + calendarMonthRow.gatey)
                 if (calendarMonthRow.isClicked) {
-                    viewHolder.btnGrid30.setBackgroundColor(ContextCompat.getColor(context, R.color.gray_light))
-                }else {
-                    viewHolder.btnGrid30.setBackgroundColor(ContextCompat.getColor(context, R.color.calendar_false))
+                    viewHolder.btnGrid30.setBackgroundColor(
+                        ContextCompat.getColor(
+                            context,
+                            R.color.gray_light
+                        )
+                    )
+                } else {
+                    viewHolder.btnGrid30.setBackgroundColor(
+                        ContextCompat.getColor(
+                            context,
+                            R.color.calendar_false
+                        )
+                    )
                     viewHolder.btnGrid30.setBackgroundResource(R.drawable.cell_border)
                 }
                 viewHolder.btnGrid30.setOnClickListener(object : View.OnClickListener {
@@ -634,9 +877,19 @@ class DateRVAdapter : RecyclerView.Adapter<RecyclerView.ViewHolder> {
 
                 viewHolder.btnGrid31.setText("" + calendarMonthRow.gatey)
                 if (calendarMonthRow.isClicked) {
-                    viewHolder.btnGrid31.setBackgroundColor(ContextCompat.getColor(context, R.color.gray_light))
-                }else {
-                    viewHolder.btnGrid31.setBackgroundColor(ContextCompat.getColor(context, R.color.calendar_false))
+                    viewHolder.btnGrid31.setBackgroundColor(
+                        ContextCompat.getColor(
+                            context,
+                            R.color.gray_light
+                        )
+                    )
+                } else {
+                    viewHolder.btnGrid31.setBackgroundColor(
+                        ContextCompat.getColor(
+                            context,
+                            R.color.calendar_false
+                        )
+                    )
                     viewHolder.btnGrid31.setBackgroundResource(R.drawable.cell_border)
                 }
                 viewHolder.btnGrid31.setOnClickListener(object : View.OnClickListener {
@@ -657,9 +910,19 @@ class DateRVAdapter : RecyclerView.Adapter<RecyclerView.ViewHolder> {
 
                 viewHolder.btnGrid32.setText("" + calendarMonthRow.gatey)
                 if (calendarMonthRow.isClicked) {
-                    viewHolder.btnGrid32.setBackgroundColor(ContextCompat.getColor(context, R.color.gray_light))
-                }else {
-                    viewHolder.btnGrid32.setBackgroundColor(ContextCompat.getColor(context, R.color.calendar_false))
+                    viewHolder.btnGrid32.setBackgroundColor(
+                        ContextCompat.getColor(
+                            context,
+                            R.color.gray_light
+                        )
+                    )
+                } else {
+                    viewHolder.btnGrid32.setBackgroundColor(
+                        ContextCompat.getColor(
+                            context,
+                            R.color.calendar_false
+                        )
+                    )
                     viewHolder.btnGrid32.setBackgroundResource(R.drawable.cell_border)
                 }
                 viewHolder.btnGrid32.setOnClickListener(object : View.OnClickListener {
@@ -678,11 +941,21 @@ class DateRVAdapter : RecyclerView.Adapter<RecyclerView.ViewHolder> {
             if (calendarMonth.get(33).isRealDate) {
                 var calendarMonthRow = calendarMonth.get(33)
 
-                viewHolder.btnGrid33.setText("" +calendarMonthRow.gatey)
+                viewHolder.btnGrid33.setText("" + calendarMonthRow.gatey)
                 if (calendarMonthRow.isClicked) {
-                    viewHolder.btnGrid33.setBackgroundColor(ContextCompat.getColor(context, R.color.gray_light))
-                }else {
-                    viewHolder.btnGrid33.setBackgroundColor(ContextCompat.getColor(context, R.color.calendar_false))
+                    viewHolder.btnGrid33.setBackgroundColor(
+                        ContextCompat.getColor(
+                            context,
+                            R.color.gray_light
+                        )
+                    )
+                } else {
+                    viewHolder.btnGrid33.setBackgroundColor(
+                        ContextCompat.getColor(
+                            context,
+                            R.color.calendar_false
+                        )
+                    )
                     viewHolder.btnGrid33.setBackgroundResource(R.drawable.cell_border)
                 }
                 viewHolder.btnGrid33.setOnClickListener(object : View.OnClickListener {
@@ -703,9 +976,19 @@ class DateRVAdapter : RecyclerView.Adapter<RecyclerView.ViewHolder> {
 
                 viewHolder.btnGrid34.setText("" + calendarMonthRow.gatey)
                 if (calendarMonthRow.isClicked) {
-                    viewHolder.btnGrid34.setBackgroundColor(ContextCompat.getColor(context, R.color.gray_light))
-                }else {
-                    viewHolder.btnGrid34.setBackgroundColor(ContextCompat.getColor(context, R.color.calendar_false))
+                    viewHolder.btnGrid34.setBackgroundColor(
+                        ContextCompat.getColor(
+                            context,
+                            R.color.gray_light
+                        )
+                    )
+                } else {
+                    viewHolder.btnGrid34.setBackgroundColor(
+                        ContextCompat.getColor(
+                            context,
+                            R.color.calendar_false
+                        )
+                    )
                     viewHolder.btnGrid34.setBackgroundResource(R.drawable.cell_border)
                 }
                 viewHolder.btnGrid34.setOnClickListener(object : View.OnClickListener {
@@ -726,9 +1009,19 @@ class DateRVAdapter : RecyclerView.Adapter<RecyclerView.ViewHolder> {
 
                 viewHolder.btnGrid35.setText("" + calendarMonthRow.gatey)
                 if (calendarMonthRow.isClicked) {
-                    viewHolder.btnGrid35.setBackgroundColor(ContextCompat.getColor(context, R.color.gray_light))
-                }else {
-                    viewHolder.btnGrid35.setBackgroundColor(ContextCompat.getColor(context, R.color.calendar_false))
+                    viewHolder.btnGrid35.setBackgroundColor(
+                        ContextCompat.getColor(
+                            context,
+                            R.color.gray_light
+                        )
+                    )
+                } else {
+                    viewHolder.btnGrid35.setBackgroundColor(
+                        ContextCompat.getColor(
+                            context,
+                            R.color.calendar_false
+                        )
+                    )
                     viewHolder.btnGrid35.setBackgroundResource(R.drawable.cell_border)
                 }
                 viewHolder.btnGrid35.setOnClickListener(object : View.OnClickListener {
@@ -749,9 +1042,19 @@ class DateRVAdapter : RecyclerView.Adapter<RecyclerView.ViewHolder> {
 
                 viewHolder.btnGrid36.setText("" + calendarMonthRow.gatey)
                 if (calendarMonthRow.isClicked) {
-                    viewHolder.btnGrid36.setBackgroundColor(ContextCompat.getColor(context, R.color.gray_light))
-                }else {
-                    viewHolder.btnGrid36.setBackgroundColor(ContextCompat.getColor(context, R.color.calendar_false))
+                    viewHolder.btnGrid36.setBackgroundColor(
+                        ContextCompat.getColor(
+                            context,
+                            R.color.gray_light
+                        )
+                    )
+                } else {
+                    viewHolder.btnGrid36.setBackgroundColor(
+                        ContextCompat.getColor(
+                            context,
+                            R.color.calendar_false
+                        )
+                    )
                     viewHolder.btnGrid36.setBackgroundResource(R.drawable.cell_border)
                 }
                 viewHolder.btnGrid36.setOnClickListener(object : View.OnClickListener {
@@ -772,9 +1075,19 @@ class DateRVAdapter : RecyclerView.Adapter<RecyclerView.ViewHolder> {
 
                 viewHolder.btnGrid37.setText("" + calendarMonthRow.gatey)
                 if (calendarMonthRow.isClicked) {
-                    viewHolder.btnGrid37.setBackgroundColor(ContextCompat.getColor(context, R.color.gray_light))
-                }else {
-                    viewHolder.btnGrid37.setBackgroundColor(ContextCompat.getColor(context, R.color.calendar_false))
+                    viewHolder.btnGrid37.setBackgroundColor(
+                        ContextCompat.getColor(
+                            context,
+                            R.color.gray_light
+                        )
+                    )
+                } else {
+                    viewHolder.btnGrid37.setBackgroundColor(
+                        ContextCompat.getColor(
+                            context,
+                            R.color.calendar_false
+                        )
+                    )
                     viewHolder.btnGrid37.setBackgroundResource(R.drawable.cell_border)
                 }
                 viewHolder.btnGrid37.setOnClickListener(object : View.OnClickListener {
@@ -795,9 +1108,19 @@ class DateRVAdapter : RecyclerView.Adapter<RecyclerView.ViewHolder> {
 
                 viewHolder.btnGrid38.setText("" + calendarMonthRow.gatey)
                 if (calendarMonthRow.isClicked) {
-                    viewHolder.btnGrid38.setBackgroundColor(ContextCompat.getColor(context, R.color.gray_light))
-                }else {
-                    viewHolder.btnGrid38.setBackgroundColor(ContextCompat.getColor(context, R.color.calendar_false))
+                    viewHolder.btnGrid38.setBackgroundColor(
+                        ContextCompat.getColor(
+                            context,
+                            R.color.gray_light
+                        )
+                    )
+                } else {
+                    viewHolder.btnGrid38.setBackgroundColor(
+                        ContextCompat.getColor(
+                            context,
+                            R.color.calendar_false
+                        )
+                    )
                     viewHolder.btnGrid38.setBackgroundResource(R.drawable.cell_border)
                 }
                 viewHolder.btnGrid38.setOnClickListener(object : View.OnClickListener {
@@ -818,9 +1141,19 @@ class DateRVAdapter : RecyclerView.Adapter<RecyclerView.ViewHolder> {
 
                 viewHolder.btnGrid39.setText("" + calendarMonthRow.gatey)
                 if (calendarMonthRow.isClicked) {
-                    viewHolder.btnGrid39.setBackgroundColor(ContextCompat.getColor(context, R.color.gray_light))
-                }else {
-                    viewHolder.btnGrid39.setBackgroundColor(ContextCompat.getColor(context, R.color.calendar_false))
+                    viewHolder.btnGrid39.setBackgroundColor(
+                        ContextCompat.getColor(
+                            context,
+                            R.color.gray_light
+                        )
+                    )
+                } else {
+                    viewHolder.btnGrid39.setBackgroundColor(
+                        ContextCompat.getColor(
+                            context,
+                            R.color.calendar_false
+                        )
+                    )
                     viewHolder.btnGrid39.setBackgroundResource(R.drawable.cell_border)
                 }
                 viewHolder.btnGrid39.setOnClickListener(object : View.OnClickListener {
@@ -841,9 +1174,19 @@ class DateRVAdapter : RecyclerView.Adapter<RecyclerView.ViewHolder> {
 
                 viewHolder.btnGrid40.setText("" + calendarMonthRow.gatey)
                 if (calendarMonthRow.isClicked) {
-                    viewHolder.btnGrid40.setBackgroundColor(ContextCompat.getColor(context, R.color.gray_light))
-                }else {
-                    viewHolder.btnGrid40.setBackgroundColor(ContextCompat.getColor(context, R.color.calendar_false))
+                    viewHolder.btnGrid40.setBackgroundColor(
+                        ContextCompat.getColor(
+                            context,
+                            R.color.gray_light
+                        )
+                    )
+                } else {
+                    viewHolder.btnGrid40.setBackgroundColor(
+                        ContextCompat.getColor(
+                            context,
+                            R.color.calendar_false
+                        )
+                    )
                     viewHolder.btnGrid40.setBackgroundResource(R.drawable.cell_border)
                 }
                 viewHolder.btnGrid40.setOnClickListener(object : View.OnClickListener {
@@ -864,9 +1207,19 @@ class DateRVAdapter : RecyclerView.Adapter<RecyclerView.ViewHolder> {
 
                 viewHolder.btnGrid41.setText("" + calendarMonthRow.gatey)
                 if (calendarMonthRow.isClicked) {
-                    viewHolder.btnGrid41.setBackgroundColor(ContextCompat.getColor(context, R.color.gray_light))
-                }else {
-                    viewHolder.btnGrid41.setBackgroundColor(ContextCompat.getColor(context, R.color.calendar_false))
+                    viewHolder.btnGrid41.setBackgroundColor(
+                        ContextCompat.getColor(
+                            context,
+                            R.color.gray_light
+                        )
+                    )
+                } else {
+                    viewHolder.btnGrid41.setBackgroundColor(
+                        ContextCompat.getColor(
+                            context,
+                            R.color.calendar_false
+                        )
+                    )
                     viewHolder.btnGrid41.setBackgroundResource(R.drawable.cell_border)
                 }
                 viewHolder.btnGrid41.setOnClickListener(object : View.OnClickListener {
@@ -887,9 +1240,19 @@ class DateRVAdapter : RecyclerView.Adapter<RecyclerView.ViewHolder> {
 
                 viewHolder.btnGrid42.setText("" + calendarMonthRow.gatey)
                 if (calendarMonthRow.isClicked) {
-                    viewHolder.btnGrid42.setBackgroundColor(ContextCompat.getColor(context, R.color.gray_light))
-                }else {
-                    viewHolder.btnGrid42.setBackgroundColor(ContextCompat.getColor(context, R.color.calendar_false))
+                    viewHolder.btnGrid42.setBackgroundColor(
+                        ContextCompat.getColor(
+                            context,
+                            R.color.gray_light
+                        )
+                    )
+                } else {
+                    viewHolder.btnGrid42.setBackgroundColor(
+                        ContextCompat.getColor(
+                            context,
+                            R.color.calendar_false
+                        )
+                    )
                     viewHolder.btnGrid42.setBackgroundResource(R.drawable.cell_border)
                 }
                 viewHolder.btnGrid42.setOnClickListener(object : View.OnClickListener {
@@ -910,9 +1273,19 @@ class DateRVAdapter : RecyclerView.Adapter<RecyclerView.ViewHolder> {
 
                 viewHolder.btnGrid43.setText("" + calendarMonthRow.gatey)
                 if (calendarMonthRow.isClicked) {
-                    viewHolder.btnGrid43.setBackgroundColor(ContextCompat.getColor(context, R.color.gray_light))
-                }else {
-                    viewHolder.btnGrid43.setBackgroundColor(ContextCompat.getColor(context, R.color.calendar_false))
+                    viewHolder.btnGrid43.setBackgroundColor(
+                        ContextCompat.getColor(
+                            context,
+                            R.color.gray_light
+                        )
+                    )
+                } else {
+                    viewHolder.btnGrid43.setBackgroundColor(
+                        ContextCompat.getColor(
+                            context,
+                            R.color.calendar_false
+                        )
+                    )
                     viewHolder.btnGrid43.setBackgroundResource(R.drawable.cell_border)
                 }
                 viewHolder.btnGrid43.setOnClickListener(object : View.OnClickListener {
@@ -933,9 +1306,19 @@ class DateRVAdapter : RecyclerView.Adapter<RecyclerView.ViewHolder> {
 
                 viewHolder.btnGrid44.setText("" + calendarMonthRow.gatey)
                 if (calendarMonthRow.isClicked) {
-                    viewHolder.btnGrid44.setBackgroundColor(ContextCompat.getColor(context, R.color.gray_light))
-                }else {
-                    viewHolder.btnGrid44.setBackgroundColor(ContextCompat.getColor(context, R.color.calendar_false))
+                    viewHolder.btnGrid44.setBackgroundColor(
+                        ContextCompat.getColor(
+                            context,
+                            R.color.gray_light
+                        )
+                    )
+                } else {
+                    viewHolder.btnGrid44.setBackgroundColor(
+                        ContextCompat.getColor(
+                            context,
+                            R.color.calendar_false
+                        )
+                    )
                     viewHolder.btnGrid44.setBackgroundResource(R.drawable.cell_border)
                 }
                 viewHolder.btnGrid44.setOnClickListener(object : View.OnClickListener {
@@ -956,9 +1339,19 @@ class DateRVAdapter : RecyclerView.Adapter<RecyclerView.ViewHolder> {
 
                 viewHolder.btnGrid45.setText("" + calendarMonthRow.gatey)
                 if (calendarMonthRow.isClicked) {
-                    viewHolder.btnGrid45.setBackgroundColor(ContextCompat.getColor(context, R.color.gray_light))
-                }else {
-                    viewHolder.btnGrid45.setBackgroundColor(ContextCompat.getColor(context, R.color.calendar_false))
+                    viewHolder.btnGrid45.setBackgroundColor(
+                        ContextCompat.getColor(
+                            context,
+                            R.color.gray_light
+                        )
+                    )
+                } else {
+                    viewHolder.btnGrid45.setBackgroundColor(
+                        ContextCompat.getColor(
+                            context,
+                            R.color.calendar_false
+                        )
+                    )
                     viewHolder.btnGrid45.setBackgroundResource(R.drawable.cell_border)
                 }
                 viewHolder.btnGrid45.setOnClickListener(object : View.OnClickListener {
@@ -979,9 +1372,19 @@ class DateRVAdapter : RecyclerView.Adapter<RecyclerView.ViewHolder> {
 
                 viewHolder.btnGrid46.setText("" + calendarMonthRow.gatey)
                 if (calendarMonthRow.isClicked) {
-                    viewHolder.btnGrid46.setBackgroundColor(ContextCompat.getColor(context, R.color.gray_light))
-                }else {
-                    viewHolder.btnGrid46.setBackgroundColor(ContextCompat.getColor(context, R.color.calendar_false))
+                    viewHolder.btnGrid46.setBackgroundColor(
+                        ContextCompat.getColor(
+                            context,
+                            R.color.gray_light
+                        )
+                    )
+                } else {
+                    viewHolder.btnGrid46.setBackgroundColor(
+                        ContextCompat.getColor(
+                            context,
+                            R.color.calendar_false
+                        )
+                    )
                     viewHolder.btnGrid46.setBackgroundResource(R.drawable.cell_border)
                 }
                 viewHolder.btnGrid46.setOnClickListener(object : View.OnClickListener {
@@ -1002,9 +1405,19 @@ class DateRVAdapter : RecyclerView.Adapter<RecyclerView.ViewHolder> {
 
                 viewHolder.btnGrid47.setText("" + calendarMonthRow.gatey)
                 if (calendarMonthRow.isClicked) {
-                    viewHolder.btnGrid47.setBackgroundColor(ContextCompat.getColor(context, R.color.gray_light))
-                }else {
-                    viewHolder.btnGrid47.setBackgroundColor(ContextCompat.getColor(context, R.color.calendar_false))
+                    viewHolder.btnGrid47.setBackgroundColor(
+                        ContextCompat.getColor(
+                            context,
+                            R.color.gray_light
+                        )
+                    )
+                } else {
+                    viewHolder.btnGrid47.setBackgroundColor(
+                        ContextCompat.getColor(
+                            context,
+                            R.color.calendar_false
+                        )
+                    )
                     viewHolder.btnGrid47.setBackgroundResource(R.drawable.cell_border)
                 }
                 viewHolder.btnGrid47.setOnClickListener(object : View.OnClickListener {
@@ -1025,9 +1438,19 @@ class DateRVAdapter : RecyclerView.Adapter<RecyclerView.ViewHolder> {
 
                 viewHolder.btnGrid48.setText("" + calendarMonthRow.gatey)
                 if (calendarMonthRow.isClicked) {
-                    viewHolder.btnGrid48.setBackgroundColor(ContextCompat.getColor(context, R.color.gray_light))
-                }else {
-                    viewHolder.btnGrid48.setBackgroundColor(ContextCompat.getColor(context, R.color.calendar_false))
+                    viewHolder.btnGrid48.setBackgroundColor(
+                        ContextCompat.getColor(
+                            context,
+                            R.color.gray_light
+                        )
+                    )
+                } else {
+                    viewHolder.btnGrid48.setBackgroundColor(
+                        ContextCompat.getColor(
+                            context,
+                            R.color.calendar_false
+                        )
+                    )
                     viewHolder.btnGrid48.setBackgroundResource(R.drawable.cell_border)
                 }
                 viewHolder.btnGrid48.setOnClickListener(object : View.OnClickListener {
@@ -1045,15 +1468,24 @@ class DateRVAdapter : RecyclerView.Adapter<RecyclerView.ViewHolder> {
             }
 
 
-//           viewHolder.ivImportFile.setOnClickListener(object : View.OnClickListener {
-//              override fun onClick(v: View?) {
-//                    if (dateListener != null) {
-//                        // dateListener?.onClickCalendar(month, calendarMonth)
-//                    } else {
-//                        Timber.v("You have forgot to initiazlie listener!")
-//                    }
-//                }
-//            })
+            viewHolder.ivPrevMonth.setOnClickListener {
+                if (dateListener != null) {
+                    var updatedMonth = month - 1
+                    if (updatedMonth >= 0) {
+                        dateListener!!.onMonthSelected(updatedMonth)
+                    }
+                }
+            }
+
+            viewHolder.ivNextMonth.setOnClickListener {
+                if (dateListener != null) {
+                    var updatedMonth = month + 1
+                    if (updatedMonth <= 11) {
+                        dateListener!!.onMonthSelected(updatedMonth)
+                    }
+                }
+            }
+
         }
     }
 
@@ -1064,6 +1496,8 @@ class DateRVAdapter : RecyclerView.Adapter<RecyclerView.ViewHolder> {
 
     inner class PropertyRowViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         var tvMonthTitle: AppCompatTextView = itemView.tvMonthTitle
+        var ivPrevMonth: AppCompatImageView = itemView.ivPrevMonth
+        var ivNextMonth: AppCompatImageView = itemView.ivNextMonth
         var btnGrid7: AppCompatTextView = itemView.btnGrid7
         var btnGrid8: AppCompatTextView = itemView.btnGrid8
         var btnGrid9: AppCompatTextView = itemView.btnGrid9

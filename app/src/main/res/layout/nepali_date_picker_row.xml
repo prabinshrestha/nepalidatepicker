@@ -7,502 +7,556 @@
 
     <!--    month title-->
 
-    <androidx.appcompat.widget.AppCompatTextView
-        android:id="@+id/tvMonthTitle"
+
+    <!--    <RelativeLayout-->
+    <!--        android:id="@+id/rlHead"-->
+    <!--        android:layout_width="match_parent"-->
+    <!--        android:layout_height="wrap_content">-->
+    <!--        -->
+    <!--        -->
+
+    <!--        <androidx.appcompat.widget.AppCompatTextView-->
+    <!--            android:id="@+id/tvMonthTitle"-->
+    <!--            android:layout_width="match_parent"-->
+    <!--            android:layout_height="wrap_content"-->
+    <!--            android:layout_centerHorizontal="true"-->
+    <!--            android:layout_marginBottom="8dp"-->
+    <!--            android:gravity="center_horizontal"-->
+    <!--            android:text="Month Name"-->
+    <!--            android:textColor="#090909"-->
+    <!--            android:textSize="16sp"-->
+    <!--            android:textStyle="bold" />-->
+
+    <!--    </RelativeLayout>-->
+
+
+    <RelativeLayout
+        android:id="@+id/rlHead"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
-        android:layout_marginBottom="8dp"
-        android:gravity="center_horizontal"
-        android:text="Month Name"
-        android:textColor="#090909"
-        android:textSize="16sp"
-        android:textStyle="bold" />
+        android:paddingTop="8dp"
+        android:paddingBottom="16dp">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/ivPrevMonth"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="16dp"
+            android:layout_centerVertical="true"
+            android:layout_toLeftOf="@+id/tvMonthTitle"
+            android:src="@drawable/ic_arrow_left_black" />
+
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvMonthTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:gravity="center_horizontal"
+            android:layout_marginLeft="16dp"
+            android:text="Month Name"
+            android:textColor="@android:color/black"
+            android:textSize="16sp"
+            android:textStyle="bold" />
+
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/ivNextMonth"
+            android:layout_marginLeft="16dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="16dp"
+            android:layout_centerVertical="true"
+            android:layout_toRightOf="@+id/tvMonthTitle"
+            android:src="@drawable/ic_arrow_right_black" />
+
+    </RelativeLayout>
+
 
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@id/tvMonthTitle">
+        android:layout_below="@id/rlHead">
 
 
-    <!--    //new grid-->
-    <TableLayout
-        android:layout_centerInParent="true"
-        android:id="@+id/tlCalendar"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content">
+        <!--    //new grid-->
+        <TableLayout
+            android:id="@+id/tlCalendar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true">
 
-        <TableRow>
+            <TableRow>
 
-            <androidx.appcompat.widget.AppCompatTextView
-                android:layout_width="40dp"
-                android:layout_height="40dp"
-                android:layout_marginLeft="4dp"
-                android:background="@drawable/cell_border"
-                android:gravity="center"
-                android:text="S"
-                android:textColor="#090909"
-                android:textStyle="bold" />
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:layout_marginLeft="4dp"
+                    android:background="@drawable/cell_border"
+                    android:gravity="center"
+                    android:text="S"
+                    android:textColor="#090909"
+                    android:textStyle="bold" />
 
-            <androidx.appcompat.widget.AppCompatTextView
-                android:layout_width="40dp"
-                android:layout_height="40dp"
-                android:background="@drawable/cell_border"
-                android:gravity="center"
-                android:text="M"
-                android:textColor="#090909"
-                android:textStyle="bold" />
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:background="@drawable/cell_border"
+                    android:gravity="center"
+                    android:text="M"
+                    android:textColor="#090909"
+                    android:textStyle="bold" />
 
-            <androidx.appcompat.widget.AppCompatTextView
-                android:layout_width="40dp"
-                android:layout_height="40dp"
-                android:background="@drawable/cell_border"
-                android:gravity="center"
-                android:text="T"
-                android:textColor="#090909"
-                android:textStyle="bold" />
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:background="@drawable/cell_border"
+                    android:gravity="center"
+                    android:text="T"
+                    android:textColor="#090909"
+                    android:textStyle="bold" />
 
-            <androidx.appcompat.widget.AppCompatTextView
-                android:layout_width="40dp"
-                android:layout_height="40dp"
-                android:background="@drawable/cell_border"
-                android:gravity="center"
-                android:text="W"
-                android:textColor="#090909"
-                android:textStyle="bold" />
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:background="@drawable/cell_border"
+                    android:gravity="center"
+                    android:text="W"
+                    android:textColor="#090909"
+                    android:textStyle="bold" />
 
-            <androidx.appcompat.widget.AppCompatTextView
-                android:layout_width="40dp"
-                android:layout_height="40dp"
-                android:background="@drawable/cell_border"
-                android:gravity="center"
-                android:text="T"
-                android:textColor="#090909"
-                android:textStyle="bold" />
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:background="@drawable/cell_border"
+                    android:gravity="center"
+                    android:text="T"
+                    android:textColor="#090909"
+                    android:textStyle="bold" />
 
-            <androidx.appcompat.widget.AppCompatTextView
-                android:layout_width="40dp"
-                android:layout_height="40dp"
-                android:background="@drawable/cell_border"
-                android:gravity="center"
-                android:text="F"
-                android:textColor="#090909"
-                android:textStyle="bold" />
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:background="@drawable/cell_border"
+                    android:gravity="center"
+                    android:text="F"
+                    android:textColor="#090909"
+                    android:textStyle="bold" />
 
-            <androidx.appcompat.widget.AppCompatTextView
-                android:layout_width="40dp"
-                android:layout_height="40dp"
-                android:background="@drawable/cell_border"
-                android:gravity="center"
-                android:text="S"
-                android:textColor="#090909"
-                android:textStyle="bold" />
-        </TableRow>
-        <!--        //2nd row-->
-        <TableRow>
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:background="@drawable/cell_border"
+                    android:gravity="center"
+                    android:text="S"
+                    android:textColor="#090909"
+                    android:textStyle="bold" />
+            </TableRow>
+            <!--        //2nd row-->
+            <TableRow>
 
-            <androidx.appcompat.widget.AppCompatTextView
-                android:id="@+id/btnGrid7"
-                android:layout_width="40dp"
-                android:layout_height="40dp"
-                android:layout_marginLeft="4dp"
-                android:background="@drawable/cell_border"
-                android:gravity="center"
-                android:textColor="#090909"
-                tools:text="S" />
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/btnGrid7"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:layout_marginLeft="4dp"
+                    android:background="@drawable/cell_border"
+                    android:gravity="center"
+                    android:textColor="#090909"
+                    tools:text="S" />
 
-            <androidx.appcompat.widget.AppCompatTextView
-                android:id="@+id/btnGrid8"
-                android:layout_width="40dp"
-                android:layout_height="40dp"
-                android:background="@drawable/cell_border"
-                android:gravity="center"
-                android:textColor="#090909"
-                tools:text="S" />
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/btnGrid8"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:background="@drawable/cell_border"
+                    android:gravity="center"
+                    android:textColor="#090909"
+                    tools:text="S" />
 
-            <androidx.appcompat.widget.AppCompatTextView
-                android:id="@+id/btnGrid9"
-                android:layout_width="40dp"
-                android:layout_height="40dp"
-                android:background="@drawable/cell_border"
-                android:gravity="center"
-                android:textColor="#090909"
-                tools:text="S" />
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/btnGrid9"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:background="@drawable/cell_border"
+                    android:gravity="center"
+                    android:textColor="#090909"
+                    tools:text="S" />
 
-            <androidx.appcompat.widget.AppCompatTextView
-                android:id="@+id/btnGrid10"
-                android:layout_width="40dp"
-                android:layout_height="40dp"
-                android:background="@drawable/cell_border"
-                android:gravity="center"
-                android:textColor="#090909"
-                tools:text="S" />
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/btnGrid10"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:background="@drawable/cell_border"
+                    android:gravity="center"
+                    android:textColor="#090909"
+                    tools:text="S" />
 
-            <androidx.appcompat.widget.AppCompatTextView
-                android:id="@+id/btnGrid11"
-                android:layout_width="40dp"
-                android:layout_height="40dp"
-                android:background="@drawable/cell_border"
-                android:gravity="center"
-                android:textColor="#090909"
-                tools:text="S" />
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/btnGrid11"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:background="@drawable/cell_border"
+                    android:gravity="center"
+                    android:textColor="#090909"
+                    tools:text="S" />
 
-            <androidx.appcompat.widget.AppCompatTextView
-                android:id="@+id/btnGrid12"
-                android:layout_width="40dp"
-                android:layout_height="40dp"
-                android:background="@drawable/cell_border"
-                android:gravity="center"
-                android:textColor="#090909"
-                tools:text="S" />
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/btnGrid12"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:background="@drawable/cell_border"
+                    android:gravity="center"
+                    android:textColor="#090909"
+                    tools:text="S" />
 
-            <androidx.appcompat.widget.AppCompatTextView
-                android:id="@+id/btnGrid13"
-                android:layout_width="40dp"
-                android:layout_height="40dp"
-                android:background="@drawable/cell_border"
-                android:gravity="center"
-                android:textColor="#090909"
-                tools:text="S" />
-        </TableRow>
-        <!--        //3rd row-->
-        <TableRow>
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/btnGrid13"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:background="@drawable/cell_border"
+                    android:gravity="center"
+                    android:textColor="#090909"
+                    tools:text="S" />
+            </TableRow>
+            <!--        //3rd row-->
+            <TableRow>
 
-            <androidx.appcompat.widget.AppCompatTextView
-                android:id="@+id/btnGrid14"
-                android:layout_width="40dp"
-                android:layout_height="40dp"
-                android:layout_marginLeft="4dp"
-                android:background="@drawable/cell_border"
-                android:gravity="center"
-                android:textColor="#090909"
-                tools:text="S" />
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/btnGrid14"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:layout_marginLeft="4dp"
+                    android:background="@drawable/cell_border"
+                    android:gravity="center"
+                    android:textColor="#090909"
+                    tools:text="S" />
 
-            <androidx.appcompat.widget.AppCompatTextView
-                android:id="@+id/btnGrid15"
-                android:layout_width="40dp"
-                android:layout_height="40dp"
-                android:background="@drawable/cell_border"
-                android:gravity="center"
-                android:textColor="#090909"
-                tools:text="S" />
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/btnGrid15"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:background="@drawable/cell_border"
+                    android:gravity="center"
+                    android:textColor="#090909"
+                    tools:text="S" />
 
-            <androidx.appcompat.widget.AppCompatTextView
-                android:id="@+id/btnGrid16"
-                android:layout_width="40dp"
-                android:layout_height="40dp"
-                android:background="@drawable/cell_border"
-                android:gravity="center"
-                android:textColor="#090909"
-                tools:text="S" />
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/btnGrid16"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:background="@drawable/cell_border"
+                    android:gravity="center"
+                    android:textColor="#090909"
+                    tools:text="S" />
 
-            <androidx.appcompat.widget.AppCompatTextView
-                android:id="@+id/btnGrid17"
-                android:layout_width="40dp"
-                android:layout_height="40dp"
-                android:background="@drawable/cell_border"
-                android:gravity="center"
-                android:textColor="#090909"
-                tools:text="S" />
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/btnGrid17"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:background="@drawable/cell_border"
+                    android:gravity="center"
+                    android:textColor="#090909"
+                    tools:text="S" />
 
-            <androidx.appcompat.widget.AppCompatTextView
-                android:id="@+id/btnGrid18"
-                android:layout_width="40dp"
-                android:layout_height="40dp"
-                android:background="@drawable/cell_border"
-                android:gravity="center"
-                android:textColor="#090909"
-                tools:text="S" />
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/btnGrid18"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:background="@drawable/cell_border"
+                    android:gravity="center"
+                    android:textColor="#090909"
+                    tools:text="S" />
 
-            <androidx.appcompat.widget.AppCompatTextView
-                android:id="@+id/btnGrid19"
-                android:layout_width="40dp"
-                android:layout_height="40dp"
-                android:background="@drawable/cell_border"
-                android:gravity="center"
-                android:textColor="#090909"
-                tools:text="S" />
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/btnGrid19"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:background="@drawable/cell_border"
+                    android:gravity="center"
+                    android:textColor="#090909"
+                    tools:text="S" />
 
-            <androidx.appcompat.widget.AppCompatTextView
-                android:id="@+id/btnGrid20"
-                android:layout_width="40dp"
-                android:layout_height="40dp"
-                android:background="@drawable/cell_border"
-                android:gravity="center"
-                android:textColor="#090909"
-                tools:text="S" />
-        </TableRow>
-        <!--        //4th row-->
-        <TableRow>
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/btnGrid20"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:background="@drawable/cell_border"
+                    android:gravity="center"
+                    android:textColor="#090909"
+                    tools:text="S" />
+            </TableRow>
+            <!--        //4th row-->
+            <TableRow>
 
-            <androidx.appcompat.widget.AppCompatTextView
-                android:id="@+id/btnGrid21"
-                android:layout_width="40dp"
-                android:layout_height="40dp"
-                android:layout_marginLeft="4dp"
-                android:background="@drawable/cell_border"
-                android:gravity="center"
-                android:textColor="#090909"
-                tools:text="S" />
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/btnGrid21"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:layout_marginLeft="4dp"
+                    android:background="@drawable/cell_border"
+                    android:gravity="center"
+                    android:textColor="#090909"
+                    tools:text="S" />
 
-            <androidx.appcompat.widget.AppCompatTextView
-                android:id="@+id/btnGrid22"
-                android:layout_width="40dp"
-                android:layout_height="40dp"
-                android:background="@drawable/cell_border"
-                android:gravity="center"
-                android:textColor="#090909"
-                tools:text="S" />
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/btnGrid22"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:background="@drawable/cell_border"
+                    android:gravity="center"
+                    android:textColor="#090909"
+                    tools:text="S" />
 
-            <androidx.appcompat.widget.AppCompatTextView
-                android:id="@+id/btnGrid23"
-                android:layout_width="40dp"
-                android:layout_height="40dp"
-                android:background="@drawable/cell_border"
-                android:gravity="center"
-                android:textColor="#090909"
-                tools:text="S" />
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/btnGrid23"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:background="@drawable/cell_border"
+                    android:gravity="center"
+                    android:textColor="#090909"
+                    tools:text="S" />
 
-            <androidx.appcompat.widget.AppCompatTextView
-                android:id="@+id/btnGrid24"
-                android:layout_width="40dp"
-                android:layout_height="40dp"
-                android:background="@drawable/cell_border"
-                android:gravity="center"
-                android:textColor="#090909"
-                tools:text="S" />
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/btnGrid24"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:background="@drawable/cell_border"
+                    android:gravity="center"
+                    android:textColor="#090909"
+                    tools:text="S" />
 
-            <androidx.appcompat.widget.AppCompatTextView
-                android:id="@+id/btnGrid25"
-                android:layout_width="40dp"
-                android:layout_height="40dp"
-                android:background="@drawable/cell_border"
-                android:gravity="center"
-                android:textColor="#090909"
-                tools:text="S" />
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/btnGrid25"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:background="@drawable/cell_border"
+                    android:gravity="center"
+                    android:textColor="#090909"
+                    tools:text="S" />
 
-            <androidx.appcompat.widget.AppCompatTextView
-                android:id="@+id/btnGrid26"
-                android:layout_width="40dp"
-                android:layout_height="40dp"
-                android:background="@drawable/cell_border"
-                android:gravity="center"
-                android:textColor="#090909"
-                tools:text="S" />
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/btnGrid26"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:background="@drawable/cell_border"
+                    android:gravity="center"
+                    android:textColor="#090909"
+                    tools:text="S" />
 
-            <androidx.appcompat.widget.AppCompatTextView
-                android:id="@+id/btnGrid27"
-                android:layout_width="40dp"
-                android:layout_height="40dp"
-                android:background="@drawable/cell_border"
-                android:gravity="center"
-                android:textColor="#090909"
-                tools:text="S" />
-        </TableRow>
-        <!--        //5th row-->
-        <TableRow>
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/btnGrid27"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:background="@drawable/cell_border"
+                    android:gravity="center"
+                    android:textColor="#090909"
+                    tools:text="S" />
+            </TableRow>
+            <!--        //5th row-->
+            <TableRow>
 
-            <androidx.appcompat.widget.AppCompatTextView
-                android:id="@+id/btnGrid28"
-                android:layout_width="40dp"
-                android:layout_height="40dp"
-                android:layout_marginLeft="4dp"
-                android:background="@drawable/cell_border"
-                android:gravity="center"
-                android:textColor="#090909"
-                tools:text="S" />
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/btnGrid28"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:layout_marginLeft="4dp"
+                    android:background="@drawable/cell_border"
+                    android:gravity="center"
+                    android:textColor="#090909"
+                    tools:text="S" />
 
-            <androidx.appcompat.widget.AppCompatTextView
-                android:id="@+id/btnGrid29"
-                android:layout_width="40dp"
-                android:layout_height="40dp"
-                android:background="@drawable/cell_border"
-                android:gravity="center"
-                android:textColor="#090909"
-                tools:text="S" />
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/btnGrid29"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:background="@drawable/cell_border"
+                    android:gravity="center"
+                    android:textColor="#090909"
+                    tools:text="S" />
 
-            <androidx.appcompat.widget.AppCompatTextView
-                android:id="@+id/btnGrid30"
-                android:layout_width="40dp"
-                android:layout_height="40dp"
-                android:background="@drawable/cell_border"
-                android:gravity="center"
-                android:textColor="#090909"
-                tools:text="S" />
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/btnGrid30"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:background="@drawable/cell_border"
+                    android:gravity="center"
+                    android:textColor="#090909"
+                    tools:text="S" />
 
-            <androidx.appcompat.widget.AppCompatTextView
-                android:id="@+id/btnGrid31"
-                android:layout_width="40dp"
-                android:layout_height="40dp"
-                android:background="@drawable/cell_border"
-                android:gravity="center"
-                android:textColor="#090909"
-                tools:text="S" />
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/btnGrid31"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:background="@drawable/cell_border"
+                    android:gravity="center"
+                    android:textColor="#090909"
+                    tools:text="S" />
 
-            <androidx.appcompat.widget.AppCompatTextView
-                android:id="@+id/btnGrid32"
-                android:layout_width="40dp"
-                android:layout_height="40dp"
-                android:background="@drawable/cell_border"
-                android:gravity="center"
-                android:textColor="#090909"
-                tools:text="S" />
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/btnGrid32"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:background="@drawable/cell_border"
+                    android:gravity="center"
+                    android:textColor="#090909"
+                    tools:text="S" />
 
-            <androidx.appcompat.widget.AppCompatTextView
-                android:id="@+id/btnGrid33"
-                android:layout_width="40dp"
-                android:layout_height="40dp"
-                android:background="@drawable/cell_border"
-                android:gravity="center"
-                android:textColor="#090909"
-                tools:text="S" />
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/btnGrid33"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:background="@drawable/cell_border"
+                    android:gravity="center"
+                    android:textColor="#090909"
+                    tools:text="S" />
 
-            <androidx.appcompat.widget.AppCompatTextView
-                android:id="@+id/btnGrid34"
-                android:layout_width="40dp"
-                android:layout_height="40dp"
-                android:background="@drawable/cell_border"
-                android:gravity="center"
-                android:textColor="#090909"
-                tools:text="S" />
-        </TableRow>
-        <!--        //6th-->
-        <TableRow>
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/btnGrid34"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:background="@drawable/cell_border"
+                    android:gravity="center"
+                    android:textColor="#090909"
+                    tools:text="S" />
+            </TableRow>
+            <!--        //6th-->
+            <TableRow>
 
-            <androidx.appcompat.widget.AppCompatTextView
-                android:id="@+id/btnGrid35"
-                android:layout_width="40dp"
-                android:layout_height="40dp"
-                android:layout_marginLeft="4dp"
-                android:background="@drawable/cell_border"
-                android:gravity="center"
-                android:textColor="#090909"
-                tools:text="S" />
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/btnGrid35"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:layout_marginLeft="4dp"
+                    android:background="@drawable/cell_border"
+                    android:gravity="center"
+                    android:textColor="#090909"
+                    tools:text="S" />
 
-            <androidx.appcompat.widget.AppCompatTextView
-                android:id="@+id/btnGrid36"
-                android:layout_width="40dp"
-                android:layout_height="40dp"
-                android:background="@drawable/cell_border"
-                android:gravity="center"
-                android:textColor="#090909"
-                tools:text="S" />
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/btnGrid36"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:background="@drawable/cell_border"
+                    android:gravity="center"
+                    android:textColor="#090909"
+                    tools:text="S" />
 
-            <androidx.appcompat.widget.AppCompatTextView
-                android:id="@+id/btnGrid37"
-                android:layout_width="40dp"
-                android:layout_height="40dp"
-                android:background="@drawable/cell_border"
-                android:gravity="center"
-                android:textColor="#090909"
-                tools:text="S" />
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/btnGrid37"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:background="@drawable/cell_border"
+                    android:gravity="center"
+                    android:textColor="#090909"
+                    tools:text="S" />
 
-            <androidx.appcompat.widget.AppCompatTextView
-                android:id="@+id/btnGrid38"
-                android:layout_width="40dp"
-                android:layout_height="40dp"
-                android:background="@drawable/cell_border"
-                android:gravity="center"
-                android:textColor="#090909"
-                tools:text="S" />
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/btnGrid38"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:background="@drawable/cell_border"
+                    android:gravity="center"
+                    android:textColor="#090909"
+                    tools:text="S" />
 
-            <androidx.appcompat.widget.AppCompatTextView
-                android:id="@+id/btnGrid39"
-                android:layout_width="40dp"
-                android:layout_height="40dp"
-                android:background="@drawable/cell_border"
-                android:gravity="center"
-                android:textColor="#090909"
-                tools:text="S" />
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/btnGrid39"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:background="@drawable/cell_border"
+                    android:gravity="center"
+                    android:textColor="#090909"
+                    tools:text="S" />
 
-            <androidx.appcompat.widget.AppCompatTextView
-                android:id="@+id/btnGrid40"
-                android:layout_width="40dp"
-                android:layout_height="40dp"
-                android:background="@drawable/cell_border"
-                android:gravity="center"
-                android:textColor="#090909"
-                tools:text="S" />
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/btnGrid40"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:background="@drawable/cell_border"
+                    android:gravity="center"
+                    android:textColor="#090909"
+                    tools:text="S" />
 
-            <androidx.appcompat.widget.AppCompatTextView
-                android:id="@+id/btnGrid41"
-                android:layout_width="40dp"
-                android:layout_height="40dp"
-                android:background="@drawable/cell_border"
-                android:gravity="center"
-                android:textColor="#090909"
-                tools:text="S" />
-        </TableRow>
-        <!--        //7th row-->
-        <TableRow>
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/btnGrid41"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:background="@drawable/cell_border"
+                    android:gravity="center"
+                    android:textColor="#090909"
+                    tools:text="S" />
+            </TableRow>
+            <!--        //7th row-->
+            <TableRow>
 
-            <androidx.appcompat.widget.AppCompatTextView
-                android:id="@+id/btnGrid42"
-                android:layout_width="40dp"
-                android:layout_height="40dp"
-                android:layout_marginLeft="4dp"
-                android:background="@drawable/cell_border"
-                android:gravity="center"
-                android:textColor="#090909"
-                tools:text="S" />
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/btnGrid42"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:layout_marginLeft="4dp"
+                    android:background="@drawable/cell_border"
+                    android:gravity="center"
+                    android:textColor="#090909"
+                    tools:text="S" />
 
-            <androidx.appcompat.widget.AppCompatTextView
-                android:id="@+id/btnGrid43"
-                android:layout_width="40dp"
-                android:layout_height="40dp"
-                android:background="@drawable/cell_border"
-                android:gravity="center"
-                android:textColor="#090909"
-                tools:text="S" />
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/btnGrid43"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:background="@drawable/cell_border"
+                    android:gravity="center"
+                    android:textColor="#090909"
+                    tools:text="S" />
 
-            <androidx.appcompat.widget.AppCompatTextView
-                android:id="@+id/btnGrid44"
-                android:layout_width="40dp"
-                android:layout_height="40dp"
-                android:background="@drawable/cell_border"
-                android:gravity="center"
-                android:textColor="#090909"
-                tools:text="S" />
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/btnGrid44"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:background="@drawable/cell_border"
+                    android:gravity="center"
+                    android:textColor="#090909"
+                    tools:text="S" />
 
-            <androidx.appcompat.widget.AppCompatTextView
-                android:id="@+id/btnGrid45"
-                android:layout_width="40dp"
-                android:layout_height="40dp"
-                android:background="@drawable/cell_border"
-                android:gravity="center"
-                android:textColor="#090909"
-                tools:text="S" />
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/btnGrid45"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:background="@drawable/cell_border"
+                    android:gravity="center"
+                    android:textColor="#090909"
+                    tools:text="S" />
 
-            <androidx.appcompat.widget.AppCompatTextView
-                android:id="@+id/btnGrid46"
-                android:layout_width="40dp"
-                android:layout_height="40dp"
-                android:background="@drawable/cell_border"
-                android:gravity="center"
-                android:textColor="#090909"
-                tools:text="S" />
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/btnGrid46"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:background="@drawable/cell_border"
+                    android:gravity="center"
+                    android:textColor="#090909"
+                    tools:text="S" />
 
-            <androidx.appcompat.widget.AppCompatTextView
-                android:id="@+id/btnGrid47"
-                android:layout_width="40dp"
-                android:layout_height="40dp"
-                android:background="@drawable/cell_border"
-                android:gravity="center"
-                android:textColor="#090909"
-                tools:text="S" />
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/btnGrid47"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:background="@drawable/cell_border"
+                    android:gravity="center"
+                    android:textColor="#090909"
+                    tools:text="S" />
 
-            <androidx.appcompat.widget.AppCompatTextView
-                android:id="@+id/btnGrid48"
-                android:layout_width="40dp"
-                android:layout_height="40dp"
-                android:background="@drawable/cell_border"
-                android:gravity="center"
-                android:textColor="#090909"
-                tools:text="S" />
-        </TableRow>
-    </TableLayout>
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/btnGrid48"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:background="@drawable/cell_border"
+                    android:gravity="center"
+                    android:textColor="#090909"
+                    tools:text="S" />
+            </TableRow>
+        </TableLayout>
 
-</RelativeLayout>
+    </RelativeLayout>
 
     <!--    //grid-->
 
@@ -1219,4 +1273,4 @@
 
     <!--</GridLayout>-->
 
-    </RelativeLayout>
+</RelativeLayout>

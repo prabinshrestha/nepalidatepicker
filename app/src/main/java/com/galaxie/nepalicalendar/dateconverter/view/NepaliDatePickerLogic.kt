@@ -18,6 +18,7 @@ class NepaliDatePickerLogic {
     var day: Int = 0
 
     var selectedDate: String = ""
+    var dateSplitter = "-"
 
     constructor(fragment: NepaliDatePicker) {
         this.fragment = fragment
@@ -30,7 +31,7 @@ class NepaliDatePickerLogic {
 
         if (bundle != null) {
             var nepaliDate = bundle.get(NepaliDatePicker.KEY_NEPALI_DATE) as String
-            var dateSplitter = bundle.get(NepaliDatePicker.KEY_DATE_SPLITTER) as String
+            dateSplitter = bundle.get(NepaliDatePicker.KEY_DATE_SPLITTER) as String
 
 
             if (dateSplitter == null) {
@@ -109,25 +110,20 @@ class NepaliDatePickerLogic {
 
     }
 
-    
+
     fun generateCalendar(dateMapper: MappedDate?) {
         fragment.updateDateList(nepaliCalendar.constructNepaliCalendar(dateMapper))
     }
 
-    fun validateDate(): Boolean {
-        if (year == 2073) {
-            year = 2074
-            fragment.ivPrevYear.isEnabled = false
-            fragment.ivNextYear.isEnabled = true
+    fun validateDate(updatedYear: Int): Boolean {
+        Timber.v("updated year $updatedYear")
+        if (updatedYear == 2073) {
             //Timber.v("nepalli year shouldn't be less than 2074 : no data found for previous year!")
             fragment.showToast("Data not found for year 2073")
             return false
-        } else if (year == 2077) {
-            year = 2076
+        } else if (updatedYear == 2077) {
             // Timber.v("nepalli year should be less than 2077 : no data found for 2077!")
             fragment.showToast("Data not found for year 2077")
-            fragment.ivPrevYear.isEnabled = true
-            fragment.ivNextYear.isEnabled = false
             return false
         }
         return true
@@ -135,8 +131,12 @@ class NepaliDatePickerLogic {
 
 
     fun nextYear() {
-        year = dateMapper?.nepaliYear!!.plus(1)
-        if (validateDate()) {
+
+        var updatedYear = year + 1
+
+        if (validateDate(updatedYear)) {
+            year = updatedYear
+
             Timber.v("next year is clicked " + year)
             dateMapper = nepaliCalendar.map(
                 year.toString() + "-${String.format(
@@ -150,8 +150,10 @@ class NepaliDatePickerLogic {
     }
 
     fun previousYear() {
-        year = dateMapper?.nepaliYear!!.minus(1)
-        if (validateDate()) {
+        var updatedYear = year - 1
+        if (validateDate(updatedYear)) {
+            year = updatedYear
+
             Timber.v("previous year is clicked " + year)
             dateMapper = nepaliCalendar.map(
                 year.toString() + "-${String.format(
@@ -163,9 +165,9 @@ class NepaliDatePickerLogic {
             fragment.setNepaliYear("" + year)
         }
     }
-
+    
     fun onClickCalendar(month: Int, day: Int) {
-        Timber.v("on englishDate selection $year-$month-$day")
+        Timber.v("on englishDate selection $year$dateSplitter$month$dateSplitter$day")
         this.month = month
         this.day = day
         fragment.setDate("$year,${Month.whichNepaliMonth(month)} ${String.format("%02d", day)}")
