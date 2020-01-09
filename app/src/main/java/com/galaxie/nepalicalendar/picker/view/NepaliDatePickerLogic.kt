@@ -12,17 +12,20 @@ internal class NepaliDatePickerLogic {
 
     var fragment: NepaliDatePicker
     var nepaliCalendar = NepaliCalendar()
-    var dateMapper: MappedDate? = null;
-    var year: Int = 0
-    var month: Int = 0
-    var day: Int = 0
+    var yearInNepali: Int = 0
+    var monthInNepali: Int = 0
+    var dayInNepali: Int = 0
 
-    var selectedDate: String = ""
-    var dateSplitter = "-"
+    var selectedNepaliDate: String = ""
+    var dateSplitter: String? = "-"
+    var minNepaliDate: String? = null
+    var maxNepaliDate: String? = null
+    var nepaliDate: String? = null
 
     constructor(fragment: NepaliDatePicker) {
         this.fragment = fragment
     }
+
 
     fun onActivityCreated() {
 
@@ -30,68 +33,68 @@ internal class NepaliDatePickerLogic {
         var bundle = fragment.arguments
 
         if (bundle != null) {
-            var nepaliDate = bundle.get(NepaliDatePicker.KEY_NEPALI_DATE) as String
-            dateSplitter = bundle.get(NepaliDatePicker.KEY_DATE_SPLITTER) as String
+            nepaliDate = bundle.getString(NepaliDatePicker.KEY_NEPALI_DATE)
+            dateSplitter = bundle.getString(NepaliDatePicker.KEY_DATE_SPLITTER)
+            minNepaliDate = bundle.getString(NepaliDatePicker.KEY_MIN_NEPALI_DATE)
+            maxNepaliDate = bundle.getString(NepaliDatePicker.KEY_MAX_NEPALI_DATE)
 
-
-            if (dateSplitter == null) {
-                Timber.v("Please provide the splitter for englishDate eg - or / for a englishDate 2075-1-1 or 2075/1/1")
+            if (nepaliDate == null) {
+                Timber.v("Please provide date on bundle key ${NepaliDatePicker.KEY_NEPALI_DATE} - or / for a nepalidate 2075-1-1 or 2075/1/1")
                 return
             }
 
-            Timber.v("nepali englishDate passed for picker $nepaliDate")
+            if (dateSplitter == null) {
+                Timber.v("Please provide date splitter on bundle key ${NepaliDatePicker.KEY_DATE_SPLITTER} eg - or / for a nepalidate 2075-1-1 or 2075/1/1")
+                return
+            }
 
+            Timber.v("nepali date passed for picker $nepaliDate")
 
-            year = (nepaliDate.split(dateSplitter).get(0)).toInt()
-            month = (nepaliDate.split(dateSplitter).get(1)).toInt() - 1
-            day = (nepaliDate.split(dateSplitter).get(2)).toInt()
+            yearInNepali = (nepaliDate!!.split(dateSplitter!!).get(0)).toInt()
+            monthInNepali = (nepaliDate!!.split(dateSplitter!!).get(1)).toInt()
+            dayInNepali = (nepaliDate!!.split(dateSplitter!!).get(2)).toInt()
 
             //represent the upper most header year, name of month day
             //since month is 0 index we have to adjust month by subtract 1 since (month+1) must come in  month = (nepaliDate.split(dateSplitter).get(1)).toInt()
-            fragment.setDate("$year,${Month.whichNepaliMonth(month)} ${String.format("%02d", day)}")
-            fragment.setNepaliYear("" + year) // represent < year > in picker
-
-
-            var adjustedDate =
-                "" + year + "-" + (String.format("%02d", month)) + "-" + (String.format(
+            fragment.setNepaliDate(
+                "$yearInNepali,${Month.whichNepaliMonth(monthInNepali - 1)} ${String.format(
                     "%02d",
-                    day
-                ))
+                    dayInNepali
+                )}"
+            )
+            fragment.setNepaliYear("" + yearInNepali) // represent < year > in picker
+            fragment.setEnglishDate(
+                nepaliCalendar.convertNepaliToEnglish(
+                    nepaliDate!!,
+                    dateSplitter!!
+                )!!.displayEnglishDate!!
+            )
 
 
-            //represent the row of month
-            dateMapper = nepaliCalendar.map(adjustedDate, dateSplitter)
             fragment.initAdapter()
-            generateCalendar(dateMapper)
+            generateCalendar()
             //set the default click month in the box of picker
-            fragment.dateRVAdapter.setDefaultClickMonthRow(month, day)
-            fragment.rvDateTable.scrollToPosition(month)
+            fragment.dateRVAdapter.setDefaultClickMonthRow(monthInNepali - 1, dayInNepali)
+            fragment.rvDateTable.scrollToPosition(monthInNepali - 1)
 
             fragment.btnCancel.setOnClickListener(View.OnClickListener {
                 fragment.dismiss()
             })
 
-            fragment.btnOk.setOnClickListener(View.OnClickListener {
+            fragment.btnSet.setOnClickListener(View.OnClickListener {
                 if (fragment.dateListener != null) {
                     //since month is 0 index so to adjust we have to add 1
-                    selectedDate =
-                        "$year$dateSplitter${String.format(
-                            "%02d",
-                            month
-                        )}$dateSplitter${String.format("%02d", day)}"
-                    var mappedDate: MappedDate = nepaliCalendar.map(selectedDate, "-")!!
 
-                    var displayEnglishText = "${mappedDate.englishYear}$dateSplitter${String.format(
-                        "%02d",
-                        mappedDate.englishMonth + 1
-                    )}$dateSplitter${String.format("%02d", mappedDate.englishDay)}"
-                    var displayNepaliText = "$year$dateSplitter${String.format(
-                        "%02d",
-                        month + 1
-                    )}$dateSplitter${String.format("%02d", day)}"
+
+                    selectedNepaliDate =
+                        "$yearInNepali$dateSplitter$monthInNepali$dateSplitter$dayInNepali"
+
+                    var mappedDate: MappedDate =
+                        nepaliCalendar.convertNepaliToEnglish(selectedNepaliDate, "-")!!
+
                     fragment.dateListener!!.onDateSelected(
-                        displayNepaliText,
-                        displayEnglishText
+                        mappedDate.displayNepaliDate,
+                        mappedDate.displayEnglishDate
                     )
                     fragment.dismiss()
                 } else {
@@ -111,8 +114,15 @@ internal class NepaliDatePickerLogic {
     }
 
 
-    fun generateCalendar(dateMapper: MappedDate?) {
-        fragment.updateDateList(nepaliCalendar.constructNepaliCalendar(dateMapper))
+    fun generateCalendar() {
+        fragment.updateDateList(
+            nepaliCalendar.constructNepaliCalendar(
+                yearInNepali,
+                minNepaliDate,
+                maxNepaliDate,
+                dateSplitter!!
+            )
+        )
     }
 
     fun validateDate(updatedYear: Int): Boolean {
@@ -131,45 +141,44 @@ internal class NepaliDatePickerLogic {
 
 
     fun nextYear() {
+        var nextYear = yearInNepali + 1
 
-        var updatedYear = year + 1
-
-        if (validateDate(updatedYear)) {
-            year = updatedYear
-
-            Timber.v("next year is clicked " + year)
-            dateMapper = nepaliCalendar.map(
-                year.toString() + "-${String.format(
-                    "%02d",
-                    1
-                )}-${String.format("%02d", 1)}", "-"
-            )
-            generateCalendar(dateMapper)
-            fragment.setNepaliYear("" + year)
+        if (validateDate(nextYear)) {
+            yearInNepali = nextYear
+            Timber.v("next year is clicked " + yearInNepali)
+            generateCalendar()
+            fragment.setNepaliYear("" + yearInNepali)
         }
     }
 
     fun previousYear() {
-        var updatedYear = year - 1
-        if (validateDate(updatedYear)) {
-            year = updatedYear
-
-            Timber.v("previous year is clicked " + year)
-            dateMapper = nepaliCalendar.map(
-                year.toString() + "-${String.format(
-                    "%02d",
-                    1
-                )}-${String.format("%02d", 1)}", "-"
-            )
-            generateCalendar(dateMapper)
-            fragment.setNepaliYear("" + year)
+        var prevYear = yearInNepali - 1
+        if (validateDate(prevYear)) {
+            yearInNepali = prevYear
+            Timber.v("previous year is clicked " + yearInNepali)
+            generateCalendar()
+            fragment.setNepaliYear("" + yearInNepali)
         }
     }
 
+
     fun onClickCalendar(month: Int, day: Int) {
-        Timber.v("on englishDate selection $year$dateSplitter$month$dateSplitter$day")
-        this.month = month
-        this.day = day
-        fragment.setDate("$year,${Month.whichNepaliMonth(month)} ${String.format("%02d", day)}")
+        // Timber.v("on englishDate selection $year$dateSplitter$month$dateSplitter$day")
+        this.monthInNepali = month
+        this.dayInNepali = day
+        fragment.setNepaliDate(
+            "$yearInNepali,${Month.whichNepaliMonth(month-1)} ${String.format(
+                "%02d",
+                day
+            )}"
+        )
+        var mappedDate = nepaliCalendar.convertNepaliToEnglish(
+            "$yearInNepali-${String.format(
+                "%02d",
+                month
+            )}-${String.format("%02d", day)}", "-"
+        )
+        fragment.setEnglishDate(mappedDate!!.displayEnglishDate!!)
+
     }
 }

@@ -8,9 +8,11 @@ internal class CalendarMonthRow {
     var weekDayValue: String?
     var gatey: Int?
     var tarik: Int?
+    var hasMinMaxDateBoundry:Boolean=false
     var isClicked: Boolean = false
 
-    constructor(isWeekDay: Boolean, isEmptyMatrix: Boolean, isNepaliDate: Boolean, weekDayValue: String?, gatey: Int?, tarik: Int?) {
+    constructor(hasMinMaxDateBoundry:Boolean,isWeekDay: Boolean, isEmptyMatrix: Boolean, isNepaliDate: Boolean, weekDayValue: String?, gatey: Int?, tarik: Int?) {
+        this.hasMinMaxDateBoundry=hasMinMaxDateBoundry
         this.isWeekDay = isWeekDay
         this.isEmptyMatrix = isEmptyMatrix
         this.isRealDate = isNepaliDate

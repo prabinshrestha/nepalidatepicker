@@ -14,7 +14,6 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.PagerSnapHelper
 import com.galaxie.nepalicalendar.R
 import com.galaxie.nepalicalendar.picker.CalendarMonthRow
-import com.galaxie.nepalicalendar.picker.Month
 import kotlinx.android.synthetic.main.nepali_date_picker.*
 import timber.log.Timber
 
@@ -23,6 +22,8 @@ class NepaliDatePicker : DialogFragment() {
 
     companion object {
         var KEY_NEPALI_DATE = "KEY_NEPALI_DATE"
+        var KEY_MIN_NEPALI_DATE="KEY_MIN_NEPALI_DATE"
+        var KEY_MAX_NEPALI_DATE="KEY_MAX_NEPALI_DATE"
         var KEY_DATE_SPLITTER = "KEY_DATE_SPLITTER"
     }
 
@@ -79,7 +80,7 @@ class NepaliDatePicker : DialogFragment() {
             }
 
             override fun onMonthSelected(month: Int?) {
-                Timber.v("month selected ${Month.whichNepaliMonth(month!!)}")
+               // Timber.v("month selected ${Month.whichNepaliMonth(month!!)}")
                 rvDateTable.smoothScrollToPosition(month!!)
             }
         }
@@ -91,15 +92,19 @@ class NepaliDatePicker : DialogFragment() {
     }
 
     internal fun updateDateList(dateList: List<List<CalendarMonthRow>>) {
-        Timber.v("size of englishDate" + dateList.size)
+       // Timber.v("size of englishDate" + dateList.size)
         dateRVAdapter.updateDateList(dateList)
     }
 
     internal fun showToast(error: String) {
-        Toast.makeText(activity, error, Toast.LENGTH_LONG).show()
+        Toast.makeText(activity, error, Toast.LENGTH_SHORT).show()
     }
 
-    internal fun setDate(selectedDate: String) {
+    internal fun setNepaliDate(selectedDate: String) {
         tvNepaliDate.setText(selectedDate)
+    }
+
+    internal fun setEnglishDate(selectedDate: String) {
+        tvEnglishDate.setText(selectedDate)
     }
 }

@@ -4,32 +4,6 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
-
-    <!--    month title-->
-
-
-    <!--    <RelativeLayout-->
-    <!--        android:id="@+id/rlHead"-->
-    <!--        android:layout_width="match_parent"-->
-    <!--        android:layout_height="wrap_content">-->
-    <!--        -->
-    <!--        -->
-
-    <!--        <androidx.appcompat.widget.AppCompatTextView-->
-    <!--            android:id="@+id/tvMonthTitle"-->
-    <!--            android:layout_width="match_parent"-->
-    <!--            android:layout_height="wrap_content"-->
-    <!--            android:layout_centerHorizontal="true"-->
-    <!--            android:layout_marginBottom="8dp"-->
-    <!--            android:gravity="center_horizontal"-->
-    <!--            android:text="Month Name"-->
-    <!--            android:textColor="#090909"-->
-    <!--            android:textSize="16sp"-->
-    <!--            android:textStyle="bold" />-->
-
-    <!--    </RelativeLayout>-->
-
-
     <RelativeLayout
         android:id="@+id/rlHead"
         android:layout_width="match_parent"

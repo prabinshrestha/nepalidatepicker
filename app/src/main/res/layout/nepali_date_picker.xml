@@ -8,18 +8,30 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@color/gray_light"
-        android:paddingBottom="16dp"
-        android:paddingTop="16dp">
+        android:orientation="vertical"
+        android:paddingTop="16dp"
+        android:paddingBottom="16dp">
 
         <androidx.appcompat.widget.AppCompatTextView
             android:id="@+id/tvNepaliDate"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:paddingLeft="16dp"
-            android:text=""
+            android:text="0000-00-00"
             android:textColor="@color/colorPrimary"
             android:textSize="24sp"
             android:textStyle="bold" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvEnglishDate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingLeft="16dp"
+            android:text="0000-00-00"
+            android:textColor="@color/colorPrimary"
+            android:textSize="14sp"
+            android:textStyle="bold" />
+
 
     </LinearLayout>
 
@@ -29,8 +41,8 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@+id/llNepaliDate"
-        android:paddingBottom="16dp"
-        android:paddingTop="16dp">
+        android:paddingTop="16dp"
+        android:paddingBottom="8dp">
 
         <androidx.appcompat.widget.AppCompatImageView
             android:id="@+id/ivPrevYear"
@@ -66,39 +78,39 @@
 
 
     <androidx.recyclerview.widget.RecyclerView
-        android:layout_centerHorizontal="true"
         android:id="@+id/rvDateTable"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@+id/rlNepaliDate"
+        android:layout_centerHorizontal="true"
         android:scrollbars="vertical" />
 
 
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
+        android:layout_below="@id/rvDateTable"
+        android:layout_marginTop="8dp"
         android:layout_marginBottom="2dp"
-        android:background="@android:color/white"
-        android:layout_below="@id/rvDateTable">
+        android:background="@android:color/white">
         <!--android:layout_alignParentBottom="true">-->
 
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/btnCancel"
+            style="@style/Widget.AppCompat.Button.Borderless"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_toLeftOf="@+id/btnOk"
-            style="@style/Widget.AppCompat.Button.Borderless"
+            android:layout_toLeftOf="@+id/btnSet"
             android:text="Cancel"
             android:textColor="@color/colorAccent"
             android:textSize="16sp" />
 
         <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/btnOk"
+            android:id="@+id/btnSet"
+            style="@style/Widget.AppCompat.Button.Borderless"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentRight="true"
-            style="@style/Widget.AppCompat.Button.Borderless"
             android:text="SET"
             android:textColor="@color/colorAccent"
             android:textSize="16sp" />

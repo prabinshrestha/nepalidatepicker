@@ -21,25 +21,13 @@ class MainActivity : AppCompatActivity() {
 
 
     fun initDate() {
-
         this.nepaliCalendar = NepaliCalendar()
-
-        var calendar = Calendar.getInstance()
-        var englishDate = "" + calendar.get(Calendar.YEAR) + "-" + String.format(
-            "%02d",
-            calendar.get(Calendar.MONTH)
-        ) + "-" + String.format("%02d", calendar.get(Calendar.DAY_OF_MONTH))
-        var mappedDate = nepaliCalendar!!.convertEnglishToNepali(englishDate, "-")
+        var mappedDate = nepaliCalendar!!.convertEnglishToNepali("2020-01-01", "-")
         if (mappedDate != null) {
-            //since month is 0 index we have to adjust by adding 1 to it
             tvNepaliDate.setText(
-                "${mappedDate.nepaliYear}-${String.format(
-                    "%02d",
-                    (mappedDate.nepaliMonth + 1)
-                )}-${String.format("%02d", mappedDate.nepaliDay)}"
+                "${mappedDate.displayNepaliDate}"
             )
         }
-
         //example...
         tvNepaliDate.setOnClickListener(View.OnClickListener {
             var nepaliDatePicker = NepaliDatePicker()
@@ -55,7 +43,9 @@ class MainActivity : AppCompatActivity() {
                 }
             }
             var bundle = Bundle()
-            bundle.putString(NepaliDatePicker.KEY_NEPALI_DATE, tvNepaliDate.text.toString())
+            bundle.putString(NepaliDatePicker.KEY_NEPALI_DATE, tvNepaliDate.text.toString()) //2076-09-16
+            // bundle.putString(NepaliDatePicker.KEY_MIN_NEPALI_DATE, "2076-03-03")
+            // bundle.putString(NepaliDatePicker.KEY_MAX_NEPALI_DATE, "2077-08-08")
             bundle.putString(NepaliDatePicker.KEY_DATE_SPLITTER, "-")
             nepaliDatePicker.arguments = bundle
             nepaliDatePicker.show(supportFragmentManager, "")

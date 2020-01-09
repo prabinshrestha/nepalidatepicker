@@ -21,9 +21,20 @@ class MappedDate {
     var dayInWeek: Int
     var whichDayInWeek: String? = null
     var totalNepaliDaysInMonth: Int
+    var displayNepaliDate: String? = null
+    var displayEnglishDate: String? = null
 
 
-    constructor(englishYear: Int, englishMonth: Int, englishDay: Int, nepaliYear: Int, nepaliMonth: Int, nepaliDay: Int, dayInWeek: Int, totalNepaliDaysInMonth: Int) {
+    constructor(
+        englishYear: Int,
+        englishMonth: Int,
+        englishDay: Int,
+        nepaliYear: Int,
+        nepaliMonth: Int,
+        nepaliDay: Int,
+        dayInWeek: Int,
+        totalNepaliDaysInMonth: Int
+    ) {
         this.englishYear = englishYear
         this.englishMonth = englishMonth
         this.englishDay = englishDay
@@ -35,6 +46,16 @@ class MappedDate {
         setWhichDayInWeek(this.dayInWeek)
         setWhichNepaliMonth(this.nepaliMonth)
         setWhichEnglishMonth(this.englishMonth)
+
+        displayNepaliDate = "$nepaliYear-${String.format("%02d", nepaliMonth + 1)}-${String.format(
+            "%02d",
+            nepaliDay
+        )}"
+        displayEnglishDate =
+            "$englishYear-${String.format("%02d", englishMonth + 1)}-${String.format(
+                "%02d",
+                englishDay
+            )}"
     }
 
     fun setWhichDayInWeek(dayInWeek: Int) {

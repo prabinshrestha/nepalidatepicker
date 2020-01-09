@@ -28,7 +28,8 @@
     <color name="red">#FFEE1C25</color>
     <color name="blue">#FF303192</color>
     <color name="yellow">#FFFFF100</color>
-    <color name="dark_blue">#FF272361</color>
+    <color name="dark_blue">#80F6F6F7</color>
+<!--    <color name="dark_blue">#FF272361</color>-->
 
     <!--http://androidapplink.blogspot.com/2015/05/transparent-color-code-in-android.html-->
     <color name="white_semi_transparent">#1AD3D3D3</color>
