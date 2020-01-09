@@ -23,31 +23,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="71b100d3-f0eb-405c-8a69-1767b85992c8" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable-anydpi/minmaxboundry.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/5.4.1/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.4.1/executionHistory/executionHistory.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/5.4.1/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.4.1/executionHistory/executionHistory.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/5.4.1/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.4.1/fileHashes/fileHashes.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/5.4.1/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.4.1/fileHashes/fileHashes.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/5.4.1/fileHashes/resourceHashesCache.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.4.1/fileHashes/resourceHashesCache.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/5.4.1/javaCompile/classAnalysis.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.4.1/javaCompile/classAnalysis.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/5.4.1/javaCompile/jarAnalysis.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.4.1/javaCompile/jarAnalysis.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/5.4.1/javaCompile/javaCompile.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.4.1/javaCompile/javaCompile.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/5.4.1/javaCompile/taskHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.4.1/javaCompile/taskHistory.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/caches/build_file_checksums.ser" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/caches/build_file_checksums.ser" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/app.iml" beforeDir="false" afterPath="$PROJECT_DIR$/app/app.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/app/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/galaxie/nepalicalendar/MainActivity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/galaxie/nepalicalendar/MainActivity.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/galaxie/nepalicalendar/picker/CalendarMonthRow.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/galaxie/nepalicalendar/picker/CalendarMonthRow.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/galaxie/nepalicalendar/picker/view/DateRVAdapter.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/galaxie/nepalicalendar/picker/view/DateRVAdapter.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/galaxie/nepalicalendar/picker/view/NepaliDatePicker.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/galaxie/nepalicalendar/picker/view/NepaliDatePicker.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/galaxie/nepalicalendar/picker/view/NepaliDatePickerLogic.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/galaxie/nepalicalendar/picker/view/NepaliDatePickerLogic.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/galaxie/nepalicalendar/utils/MappedDate.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/galaxie/nepalicalendar/utils/MappedDate.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/galaxie/nepalicalendar/utils/NepaliCalendar.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/galaxie/nepalicalendar/utils/NepaliCalendar.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/nepali_date_picker.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/nepali_date_picker.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/nepali_date_picker_row.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/nepali_date_picker_row.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/values/colors.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/values/colors.xml" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -95,8 +76,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/com/galaxie/nepalicalendar/MainActivity.kt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="123">
-              <caret line="23" column="46" lean-forward="true" selection-start-line="23" selection-start-column="46" selection-end-line="23" selection-end-column="46" />
+            <state relative-caret-position="429">
+              <caret line="46" column="14" selection-start-line="46" selection-start-column="14" selection-end-line="46" selection-end-column="14" />
             </state>
           </provider>
         </entry>
@@ -160,13 +141,13 @@
         <option value="$PROJECT_DIR$/app/src/main/res/values/colors.xml" />
         <option value="$PROJECT_DIR$/app/src/main/res/drawable-anydpi/minmaxboundry.xml" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/galaxie/nepalicalendar/utils/MappedDate.kt" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/galaxie/nepalicalendar/MainActivity.kt" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/nepali_date_picker_row.xml" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/galaxie/nepalicalendar/picker/view/DateRVAdapter.kt" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/galaxie/nepalicalendar/picker/view/NepaliDatePickerLogic.kt" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/nepali_date_picker.xml" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/galaxie/nepalicalendar/picker/view/NepaliDatePicker.kt" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/galaxie/nepalicalendar/utils/NepaliCalendar.kt" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/galaxie/nepalicalendar/MainActivity.kt" />
       </list>
     </option>
   </component>
@@ -324,7 +305,7 @@
     <editor active="true" />
     <layout>
       <window_info id="Captures" order="0" side_tool="true" weight="0.25" />
-      <window_info active="true" content_ui="combo" id="Project" order="1" visible="true" weight="0.2152568" />
+      <window_info content_ui="combo" id="Project" order="1" visible="true" weight="0.2152568" />
       <window_info id="Structure" order="2" side_tool="true" />
       <window_info id="Build Variants" order="3" side_tool="true" />
       <window_info id="Image Layers" order="4" />
@@ -526,8 +507,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/galaxie/nepalicalendar/MainActivity.kt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="123">
-          <caret line="23" column="46" lean-forward="true" selection-start-line="23" selection-start-column="46" selection-end-line="23" selection-end-column="46" />
+        <state relative-caret-position="429">
+          <caret line="46" column="14" selection-start-line="46" selection-start-column="14" selection-end-line="46" selection-end-column="14" />
         </state>
       </provider>
     </entry>
