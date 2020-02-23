@@ -1,6 +1,7 @@
 # nepalidatepicker
 nepali datepicker library for android
 
+    min sdk :21 - library used androidx
     root build.gradle
     allprojects {
         repositories {
