@@ -1,10 +1,7 @@
-package com.pathway.rerp.application
+package com.galaxie.nepalicalendar.application
 
 import android.app.Application
 import timber.log.Timber
-import android.widget.Toast
-import androidx.core.content.ContextCompat.getSystemService
-import android.icu.lang.UCharacter.GraphemeClusterBreak.T
 import com.galaxie.nepalicalendar.BuildConfig
 
 
