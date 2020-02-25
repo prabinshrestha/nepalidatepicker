@@ -101,10 +101,10 @@ class NepaliDatePicker : DialogFragment() {
     }
 
     internal fun setNepaliDate(selectedDate: String) {
-        tvNepaliDate.setText(selectedDate)
+        tvNepaliDate.text = selectedDate
     }
 
     internal fun setEnglishDate(selectedDate: String) {
-        tvEnglishDate.setText(selectedDate)
+        tvEnglishDate.text = selectedDate
     }
 }
