@@ -2,9 +2,9 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
-      <module fileurl="file://$PROJECT_DIR$/library/library.iml" filepath="$PROJECT_DIR$/library/library.iml" />
-      <module fileurl="file://$PROJECT_DIR$/nepalicalendar.iml" filepath="$PROJECT_DIR$/nepalicalendar.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/nepalidatepicker.iml" filepath="$PROJECT_DIR$/.idea/modules/nepalidatepicker.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/nepalidatepicker.app.iml" filepath="$PROJECT_DIR$/.idea/modules/app/nepalidatepicker.app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/library/nepalidatepicker.library.iml" filepath="$PROJECT_DIR$/.idea/modules/library/nepalidatepicker.library.iml" />
     </modules>
   </component>
 </project>
