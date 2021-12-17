@@ -15,8 +15,6 @@
     </facet>
   </component>
   <component name="NewModuleRootManager">
-    <output url="file://$MODULE_DIR$/../../../library/out/production/classes" />
-    <output-test url="file://$MODULE_DIR$/../../../library/out/test/classes" />
     <exclude-output />
     <content url="file://$MODULE_DIR$/../../../library">
       <excludeFolder url="file://$MODULE_DIR$/../../../library/.gradle" />
