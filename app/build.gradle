@@ -1,9 +1,11 @@
-apply plugin: 'com.android.application'
-//apply plugin: 'com.android.library'
+//apply plugin: 'com.android.application'
+apply plugin: 'com.android.library'
 
 apply plugin: 'kotlin-android'
 
 apply plugin: 'kotlin-android-extensions'
+
+//apply plugin:  'maven-publish'
 
 android {
     compileSdkVersion 31
@@ -34,6 +36,23 @@ android {
         }
     }
 }
+
+//task androidSourcesJar(type: Jar) {
+//    classifier 'sources'
+//    from android.sourceSets.main.java.srcDirs
+//}
+//
+//project.afterEvaluate {
+//    publishing {
+//        publications {
+//            release(MavenPublication) {
+//                from components.release
+//                artifact androidSourcesJar // optional sources
+//            }
+//        }
+//    }
+//}
+
 
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
